@@ -2,9 +2,42 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="/TCM/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>the-code-munk</title>
+    <title>The Code Munk</title>
+    <script>
+      // GitHub Pages SPA redirect fix – restore path from query param set by 404.html
+      (function () {
+        var redirect = sessionStorage.redirect;
+        delete sessionStorage.redirect;
+        if (redirect && redirect !== location.href) {
+          history.replaceState(null, null, redirect);
+        }
+      })();
+
+      // Handle the ?p= param set by 404.html
+      (function () {
+        var search = window.location.search;
+        if (search.indexOf('?p=/') === 0 || search.indexOf('&p=/') !== -1) {
+          var params = search.slice(1).split('&');
+          var path = '';
+          var query = '';
+          for (var i = 0; i < params.length; i++) {
+            if (params[i].slice(0, 2) === 'p=') {
+              path = params[i].slice(2).replace(/~and~/g, '&');
+            } else if (params[i].slice(0, 2) === 'q=') {
+              query = '?' + params[i].slice(2).replace(/~and~/g, '&');
+            }
+          }
+          if (path) {
+            window.history.replaceState(
+              null, null,
+              window.location.pathname.split('/').slice(0, 2).join('/') + '/' + path + query + window.location.hash
+            );
+          }
+        }
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>

@@ -1,3 +1,4 @@
+
 import { Link } from "react-router-dom";
 import "./Careers.css";
 
@@ -6,65 +7,110 @@ const jobs = [
     number: "01",
     title: "Frontend Developer",
     type: "FULL TIME",
-    location: "Remote / India",
+    location: "REMOTE / INDIA",
     experience: "1–3 YEARS",
     icon: "bi-code-slash",
     description:
-      "Build responsive, scalable and polished web experiences using modern frontend technologies.",
-    skills: ["React.js", "JavaScript", "CSS3"],
+      "Build responsive production-ready websites and interfaces using React.js, JavaScript and modern CSS. You will work closely with design and project requirements to turn ideas into polished digital experiences.",
+    skills: ["React.js", "JavaScript", "HTML5", "CSS3"],
+    responsibilities: [
+      "Develop responsive React interfaces",
+      "Convert designs into reusable components",
+      "Integrate REST APIs",
+      "Optimize frontend performance",
+    ],
   },
   {
     number: "02",
     title: "UI / UX Designer",
     type: "FULL TIME",
-    location: "Remote / India",
+    location: "REMOTE / INDIA",
     experience: "1–3 YEARS",
     icon: "bi-bezier2",
     description:
-      "Design intuitive digital experiences with strong visual systems, thoughtful interactions and clean interfaces.",
-    skills: ["Figma", "UI Design", "UX"],
+      "Create clean, intuitive and conversion-focused interfaces for websites and digital products. You will shape layouts, user flows and visual systems from concept to final design.",
+    skills: ["Figma", "UI Design", "UX", "Prototyping"],
+    responsibilities: [
+      "Create website and product interfaces",
+      "Build wireframes and prototypes",
+      "Develop reusable visual systems",
+      "Work with developers during implementation",
+    ],
   },
   {
     number: "03",
     title: "React Developer",
     type: "FREELANCE",
-    location: "Remote",
+    location: "REMOTE",
     experience: "PROJECT BASED",
     icon: "bi-filetype-jsx",
     description:
-      "Work with us on selected projects and transform designs into high-quality React interfaces.",
-    skills: ["React", "API", "Responsive UI"],
+      "Join selected client projects and help transform approved designs into clean, responsive React applications with reusable components and reliable API integrations.",
+    skills: ["React", "JavaScript", "REST API", "Git"],
+    responsibilities: [
+      "Develop reusable React components",
+      "Connect frontend with APIs",
+      "Fix UI and responsive issues",
+      "Maintain clean Git workflows",
+    ],
   },
 ];
 
 const benefits = [
   {
     number: "01",
-    icon: "bi-laptop",
-    title: "Remote Friendly",
+    icon: "bi-bullseye",
+    title: "Real Client Work",
     text:
-      "Work from where you are most productive while staying connected with the team.",
+      "Work on actual websites, interfaces and digital products instead of repetitive practice projects.",
   },
   {
     number: "02",
-    icon: "bi-lightbulb",
-    title: "Creative Freedom",
+    icon: "bi-phone",
+    title: "Remote First",
     text:
-      "Bring your ideas to the table, experiment with new approaches and solve problems your way.",
+      "Our work is designed around remote collaboration, clear communication and outcome-focused delivery.",
   },
   {
     number: "03",
-    icon: "bi-graph-up-arrow",
-    title: "Keep Growing",
+    icon: "bi-lightning-charge",
+    title: "Learn by Building",
     text:
-      "Work on real projects that continuously push your design and technical skills forward.",
+      "Improve your skills by solving real frontend, design, API and performance challenges.",
   },
   {
     number: "04",
     icon: "bi-people",
-    title: "Small Team",
+    title: "Close Collaboration",
     text:
-      "Collaborate closely with people who care about the details and the final experience.",
+      "Work directly with the people involved in design, development and project decisions.",
+  },
+];
+
+const values = [
+  {
+    number: "01",
+    title: "Quality over shortcuts",
+    text:
+      "We care about clean implementation, responsive behaviour and details that users actually notice.",
+  },
+  {
+    number: "02",
+    title: "Own your work",
+    text:
+      "Take responsibility for your decisions, communicate early and solve problems instead of hiding them.",
+  },
+  {
+    number: "03",
+    title: "Keep improving",
+    text:
+      "Technology changes quickly. We expect curiosity and a willingness to learn better ways of building.",
+  },
+  {
+    number: "04",
+    title: "Build for people",
+    text:
+      "Good technology is useful technology. Every design and development decision should serve the user.",
   },
 ];
 
@@ -72,22 +118,26 @@ const process = [
   {
     number: "01",
     title: "Apply",
-    text: "Send us your profile, portfolio or a quick introduction.",
+    text:
+      "Share your resume, portfolio, GitHub or a short introduction about what you build.",
   },
   {
     number: "02",
-    title: "Connect",
-    text: "We'll have a conversation about your skills and interests.",
+    title: "Conversation",
+    text:
+      "We discuss your experience, strengths, interests and the kind of work you want to do.",
   },
   {
     number: "03",
-    title: "Create",
-    text: "Depending on the role, we'll explore your approach to a small challenge.",
+    title: "Practical Task",
+    text:
+      "For selected roles, we may share a small practical challenge relevant to the position.",
   },
   {
     number: "04",
-    title: "Join",
-    text: "If we're a good match, let's start building something together.",
+    title: "Decision",
+    text:
+      "If the role and working style are a good match, we discuss the opportunity and next steps.",
   },
 ];
 
@@ -95,10 +145,7 @@ const Careers = () => {
   return (
     <div className="careers-page">
 
-      {/* =========================================
-          HERO
-      ========================================= */}
-
+      {/* HERO */}
       <section className="careers-hero">
 
         <div className="careers-hero-bg"></div>
@@ -111,20 +158,21 @@ const Careers = () => {
 
             <div className="careers-kicker">
               <span></span>
-              JOIN THE TEAM
+              CAREERS / THE CODE MUNK
             </div>
 
             <h1>
-              Build the
+              Build digital
               <span className="gradient-text">
-                {" "}future with us.
+                {" "}work that matters.
               </span>
             </h1>
 
             <p>
-              We are looking for curious minds who love
-              technology, design and solving interesting
-              problems through digital experiences.
+              We are building a small, focused digital team around
+              frontend development, design and technology. If you
+              enjoy turning ideas into useful digital experiences,
+              there may be a place for you here.
             </p>
 
             <div className="careers-hero-actions">
@@ -133,7 +181,7 @@ const Careers = () => {
                 href="#open-positions"
                 className="btn-primary-custom"
               >
-                View Open Roles
+                Explore Open Roles
                 <i className="bi bi-arrow-down"></i>
               </a>
 
@@ -141,9 +189,28 @@ const Careers = () => {
                 to="/contact"
                 className="btn-outline-custom"
               >
-                Introduce Yourself
+                Send Your Profile
                 <i className="bi bi-arrow-up-right"></i>
               </Link>
+
+            </div>
+
+            <div className="careers-trust-row">
+
+              <span>
+                <i className="bi bi-check2"></i>
+                REAL PROJECTS
+              </span>
+
+              <span>
+                <i className="bi bi-check2"></i>
+                REMOTE FRIENDLY
+              </span>
+
+              <span>
+                <i className="bi bi-check2"></i>
+                FRONTEND FOCUSED
+              </span>
 
             </div>
 
@@ -160,29 +227,33 @@ const Careers = () => {
 
             <div className="career-visual-center">
 
-              <i className="bi bi-stars"></i>
+              <div className="career-center-icon">
+                <i className="bi bi-code-square"></i>
+              </div>
 
               <span>
-                CREATE
+                BUILD
                 <br />
-                TOGETHER
+                SOMETHING
+                <br />
+                REAL
               </span>
 
             </div>
 
             <div className="career-floating-card career-card-one">
               <i className="bi bi-code-slash"></i>
-              <span>BUILD</span>
+              <span>DEVELOP</span>
             </div>
 
             <div className="career-floating-card career-card-two">
-              <i className="bi bi-lightbulb"></i>
-              <span>THINK</span>
+              <i className="bi bi-palette"></i>
+              <span>DESIGN</span>
             </div>
 
             <div className="career-floating-card career-card-three">
               <i className="bi bi-rocket-takeoff"></i>
-              <span>GROW</span>
+              <span>DELIVER</span>
             </div>
 
           </div>
@@ -195,10 +266,14 @@ const Careers = () => {
           <div className="container-custom">
 
             <span>
-              PEOPLE × IDEAS × TECHNOLOGY
+              PEOPLE × DESIGN × CODE
             </span>
 
             <div></div>
+
+            <span className="career-scroll-text">
+              SCROLL TO EXPLORE
+            </span>
 
             <i className="bi bi-arrow-down"></i>
 
@@ -209,9 +284,7 @@ const Careers = () => {
       </section>
 
 
-      {/* =========================================
-          INTRO
-      ========================================= */}
+      {/* INTRO */}
 
       <section className="section-padding careers-intro">
 
@@ -227,10 +300,10 @@ const Careers = () => {
               </div>
 
               <h2 className="section-title">
-                Do meaningful
+                Small team.
                 <br />
                 <span className="gradient-text">
-                  digital work.
+                  Real responsibility.
                 </span>
               </h2>
 
@@ -239,16 +312,26 @@ const Careers = () => {
             <div className="careers-intro-copy">
 
               <p>
-                We believe great work comes from people who
-                have the freedom to think, experiment and
-                create.
+                The Code Munk is focused on building modern
+                websites, responsive interfaces and API-connected
+                digital experiences for real businesses.
               </p>
 
               <p>
-                We're a small digital team focused on building
-                useful, beautiful and technically strong
-                experiences for real businesses and users.
+                That means every person has an opportunity to
+                contribute. You won't simply receive a task and
+                disappear into a process. You'll understand the
+                problem, make decisions and see your work go live.
               </p>
+
+              <div className="career-intro-note">
+                <i className="bi bi-arrow-up-right"></i>
+
+                <span>
+                  We value people who think beyond their assigned
+                  task and care about the final experience.
+                </span>
+              </div>
 
             </div>
 
@@ -263,18 +346,18 @@ const Careers = () => {
             </div>
 
             <div>
+              <strong>10+</strong>
+              <span>DIGITAL PROJECTS</span>
+            </div>
+
+            <div>
+              <strong>15+</strong>
+              <span>API INTEGRATIONS</span>
+            </div>
+
+            <div>
               <strong>100%</strong>
-              <span>REMOTE FRIENDLY</span>
-            </div>
-
-            <div>
-              <strong>∞</strong>
-              <span>IDEAS WELCOME</span>
-            </div>
-
-            <div>
-              <strong>24/7</strong>
-              <span>CURIOSITY</span>
+              <span>RESPONSIVE FIRST</span>
             </div>
 
           </div>
@@ -284,9 +367,7 @@ const Careers = () => {
       </section>
 
 
-      {/* =========================================
-          BENEFITS
-      ========================================= */}
+      {/* BENEFITS */}
 
       <section className="careers-benefits">
 
@@ -298,23 +379,22 @@ const Careers = () => {
 
               <div className="section-label">
                 <span></span>
-                WHY JOIN US
+                WHY WORK WITH US
               </div>
 
               <h2 className="section-title">
-                More than
+                Build skills.
                 <br />
                 <span className="gradient-text">
-                  just a job.
+                  Build confidence.
                 </span>
               </h2>
 
             </div>
 
             <p>
-              We want people to do their best work,
-              keep learning and enjoy the process of
-              building things together.
+              We want talented people to grow through meaningful
+              work, practical challenges and close collaboration.
             </p>
 
           </div>
@@ -360,9 +440,76 @@ const Careers = () => {
       </section>
 
 
-      {/* =========================================
-          OPEN POSITIONS
-      ========================================= */}
+      {/* VALUES */}
+
+      <section className="section-padding careers-values">
+
+        <div className="container-custom">
+
+          <div className="values-heading">
+
+            <div>
+
+              <div className="section-label">
+                <span></span>
+                WHAT WE VALUE
+              </div>
+
+              <h2 className="section-title">
+                How we
+                <br />
+                <span className="gradient-text">
+                  work together.
+                </span>
+              </h2>
+
+            </div>
+
+            <p>
+              Skills matter. But the way you think, communicate
+              and take ownership matters just as much.
+            </p>
+
+          </div>
+
+
+          <div className="career-values-grid">
+
+            {values.map((value) => (
+
+              <article
+                className="career-value-card"
+                key={value.number}
+              >
+
+                <span className="career-value-number">
+                  {value.number}
+                </span>
+
+                <h3>
+                  {value.title}
+                </h3>
+
+                <p>
+                  {value.text}
+                </p>
+
+                <span className="career-value-arrow">
+                  <i className="bi bi-arrow-up-right"></i>
+                </span>
+
+              </article>
+
+            ))}
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      {/* OPEN POSITIONS */}
 
       <section
         className="section-padding careers-positions"
@@ -377,7 +524,7 @@ const Careers = () => {
 
               <div className="section-label">
                 <span></span>
-                OPEN POSITIONS
+                CURRENT OPPORTUNITIES
               </div>
 
               <h2 className="section-title">
@@ -409,7 +556,7 @@ const Careers = () => {
 
             {jobs.map((job) => (
 
-              <div
+              <article
                 className="job-card"
                 key={job.number}
               >
@@ -418,27 +565,31 @@ const Careers = () => {
                   {job.number}
                 </div>
 
-
                 <div className="job-icon">
                   <i className={`bi ${job.icon}`}></i>
                 </div>
-
 
                 <div className="job-main">
 
                   <div className="job-title-row">
 
-                    <h3>
-                      {job.title}
-                    </h3>
+                    <div>
+                      <span className="job-role-label">
+                        OPEN POSITION
+                      </span>
 
-                    <span>
+                      <h3>
+                        {job.title}
+                      </h3>
+                    </div>
+
+                    <span className="job-type">
                       {job.type}
                     </span>
 
                   </div>
 
-                  <p>
+                  <p className="job-description">
                     {job.description}
                   </p>
 
@@ -466,6 +617,23 @@ const Careers = () => {
 
                   </div>
 
+                  <div className="job-responsibilities">
+
+                    <span>
+                      WHAT YOU'LL WORK ON
+                    </span>
+
+                    <div>
+                      {job.responsibilities.map((item) => (
+                        <p key={item}>
+                          <i className="bi bi-arrow-up-right"></i>
+                          {item}
+                        </p>
+                      ))}
+                    </div>
+
+                  </div>
+
                 </div>
 
 
@@ -480,7 +648,7 @@ const Careers = () => {
                   <i className="bi bi-arrow-up-right"></i>
                 </Link>
 
-              </div>
+              </article>
 
             ))}
 
@@ -491,9 +659,75 @@ const Careers = () => {
       </section>
 
 
-      {/* =========================================
-          PROCESS
-      ========================================= */}
+      {/* WHAT WE LOOK FOR */}
+
+      <section className="careers-looking">
+
+        <div className="container-custom">
+
+          <div className="looking-box">
+
+            <div className="looking-number">
+              04
+            </div>
+
+            <div className="looking-content">
+
+              <span>
+                MORE IMPORTANT THAN A PERFECT RESUME
+              </span>
+
+              <h2>
+                Show us how
+                <br />
+                you
+                <span className="gradient-text">
+                  {" "}think.
+                </span>
+              </h2>
+
+              <p>
+                We appreciate strong fundamentals, curiosity and
+                people who can explain their decisions. A portfolio,
+                GitHub profile, live project or even a thoughtful
+                introduction can tell us more than a long list of
+                keywords.
+              </p>
+
+            </div>
+
+            <div className="looking-points">
+
+              <div>
+                <i className="bi bi-check2"></i>
+                <span>Strong fundamentals</span>
+              </div>
+
+              <div>
+                <i className="bi bi-check2"></i>
+                <span>Problem-solving mindset</span>
+              </div>
+
+              <div>
+                <i className="bi bi-check2"></i>
+                <span>Attention to detail</span>
+              </div>
+
+              <div>
+                <i className="bi bi-check2"></i>
+                <span>Clear communication</span>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      {/* PROCESS */}
 
       <section className="careers-process">
 
@@ -505,22 +739,23 @@ const Careers = () => {
 
               <div className="section-label">
                 <span></span>
-                HOW WE HIRE
+                OUR HIRING PROCESS
               </div>
 
               <h2 className="section-title">
                 Simple process.
                 <br />
                 <span className="gradient-text">
-                  No unnecessary layers.
+                  Clear conversations.
                 </span>
               </h2>
 
             </div>
 
             <p>
-              We keep conversations simple and focus on
-              your skills, your thinking and your potential.
+              No unnecessary layers. We want to understand what
+              you can do, how you think and whether we can work
+              well together.
             </p>
 
           </div>
@@ -535,8 +770,14 @@ const Careers = () => {
                 key={item.number}
               >
 
-                <div className="process-number">
-                  {item.number}
+                <div className="process-card-top">
+
+                  <span className="process-number">
+                    {item.number}
+                  </span>
+
+                  <i className="bi bi-arrow-up-right"></i>
+
                 </div>
 
                 <h3>
@@ -546,8 +787,6 @@ const Careers = () => {
                 <p>
                   {item.text}
                 </p>
-
-                <i className="bi bi-arrow-up-right"></i>
 
               </div>
 
@@ -560,9 +799,7 @@ const Careers = () => {
       </section>
 
 
-      {/* =========================================
-          TALENT CTA
-      ========================================= */}
+      {/* TALENT CTA */}
 
       <section className="careers-talent">
 
@@ -570,25 +807,26 @@ const Careers = () => {
 
           <div className="careers-talent-box">
 
-            <div>
+            <div className="talent-content">
 
               <span>
-                DON'T SEE YOUR ROLE?
+                NO PERFECT ROLE? NO PROBLEM.
               </span>
 
               <h2>
-                We might still
+                Have something
                 <br />
-                need
+                interesting to
                 <span className="gradient-text">
-                  {" "}you.
+                  {" "}bring?
                 </span>
               </h2>
 
               <p>
-                If you are talented, curious and excited
-                about digital work, send us your profile.
-                The right opportunity might not be listed yet.
+                If your role isn't listed but you think your skills
+                could add value to The Code Munk, introduce yourself.
+                Tell us what you build, what you're good at and what
+                kind of work you want to do.
               </p>
 
             </div>
@@ -608,9 +846,7 @@ const Careers = () => {
       </section>
 
 
-      {/* =========================================
-          FINAL CTA
-      ========================================= */}
+      {/* FINAL CTA */}
 
       <section className="careers-cta">
 
@@ -626,17 +862,19 @@ const Careers = () => {
             </span>
 
             <h2>
-              Come build
+              Don't just
               <br />
-              something
+              write code.
+              <br />
               <span className="gradient-text">
-                {" "}great.
+                Build something.
               </span>
             </h2>
 
             <p>
-              Great products start with great people.
-              Let's see what we can create together.
+              Bring your skills, curiosity and ideas.
+              Let's create digital experiences that people
+              actually enjoy using.
             </p>
 
             <Link
@@ -658,3 +896,4 @@ const Careers = () => {
 };
 
 export default Careers;
+

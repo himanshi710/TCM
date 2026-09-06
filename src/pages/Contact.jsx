@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import "./Contact.css";
 
 const Contact = () => {
@@ -6,12 +7,7 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
     setSubmitted(true);
-
-    setTimeout(() => {
-      setSubmitted(false);
-    }, 5000);
   };
 
   return (
@@ -20,103 +16,290 @@ const Contact = () => {
       {/* =====================================================
           HERO
       ===================================================== */}
+      <section className="contact-luxury-hero">
 
-      <section className="contact-hero">
-
-        <div className="contact-hero-bg"></div>
+        <div className="contact-hero-image"></div>
+        <div className="contact-hero-overlay"></div>
         <div className="contact-hero-grid"></div>
-        <div className="contact-hero-glow"></div>
 
-        <div className="container-custom contact-hero-inner">
+        <div className="contact-orb orb-one"></div>
+        <div className="contact-orb orb-two"></div>
 
-          <div className="contact-hero-content">
+        <div className="container-custom contact-hero-container">
 
-            <div className="contact-kicker">
-              <span></span>
-              LET'S CONNECT
+          <div className="contact-hero-left">
+
+            <div className="contact-eyebrow">
+              <span className="eyebrow-line"></span>
+              <span>THE CODE MUNK / CONTACT</span>
+              <span className="eyebrow-dot"></span>
             </div>
 
             <h1>
-              Let's build
+              Let's create
+              <br />
+              something
               <span className="gradient-text">
-                {" "}something great.
+                {" "}remarkable.
               </span>
             </h1>
 
-            <p>
-              Have a project, idea or question?
-              Tell us what you're thinking and we'll
-              turn the conversation into the next step.
+            <p className="contact-hero-description">
+              Have a website, digital product or business idea in mind?
+              Tell us what you're building. We'll bring the strategy,
+              design and technology together to create something that
+              actually works.
             </p>
 
-            <div className="contact-hero-meta">
+            <div className="contact-hero-actions">
 
-              <div>
-                <i className="bi bi-lightning-charge"></i>
-                <span>Quick Response</span>
-              </div>
+              <a
+                href="#contact-form"
+                className="btn-primary-custom"
+              >
+                Start a Conversation
+                <i className="bi bi-arrow-up-right"></i>
+              </a>
 
-              <div>
-                <i className="bi bi-globe2"></i>
-                <span>Remote Friendly</span>
-              </div>
+              <a
+                href="mailto:hello@thecodemunk.in"
+                className="contact-email-link"
+              >
+                <span className="email-icon">
+                  <i className="bi bi-envelope"></i>
+                </span>
 
-              <div>
-                <i className="bi bi-chat-dots"></i>
-                <span>Clear Communication</span>
-              </div>
+                <span>
+                  <small>EMAIL US DIRECTLY</small>
+                  <strong>hello@thecodemunk.in</strong>
+                </span>
+              </a>
 
             </div>
 
           </div>
 
 
-          {/* Hero floating card */}
+          {/* HERO SIDE CARD */}
+          <div className="contact-hero-right">
 
-          <div className="contact-hero-card">
+            <div className="luxury-contact-card">
 
-            <div className="hero-card-orbit orbit-one"></div>
-            <div className="hero-card-orbit orbit-two"></div>
+              <div className="luxury-card-glow"></div>
 
-            <div className="hero-card-top">
-              <span>START HERE</span>
+              <div className="luxury-card-top">
+                <span>START A PROJECT</span>
 
-              <i className="bi bi-arrow-down-right"></i>
+                <div className="card-index">
+                  01
+                </div>
+              </div>
+
+              <div className="luxury-card-icon">
+                <i className="bi bi-arrow-up-right"></i>
+              </div>
+
+              <div className="luxury-card-content">
+
+                <span className="luxury-mini-label">
+                  YOUR IDEA
+                </span>
+
+                <h3>
+                  Starts with
+                  <br />
+                  a conversation.
+                </h3>
+
+                <p>
+                  You don't need a perfect brief.
+                  Just bring the idea, challenge or
+                  opportunity you're thinking about.
+                </p>
+
+              </div>
+
+              <div className="luxury-card-bottom">
+
+                <div className="availability-dot"></div>
+
+                <span>
+                  CURRENTLY ACCEPTING
+                  <br />
+                  NEW PROJECTS
+                </span>
+
+              </div>
+
             </div>
-
-            <div className="hero-card-icon">
-              <i className="bi bi-send"></i>
-            </div>
-
-            <h3>
-              Your idea
-              <br />
-              starts here.
-            </h3>
-
-            <p>
-              Tell us what you want to build.
-              We'll help you figure out what comes next.
-            </p>
-
-            <div className="hero-card-line"></div>
-
-            <span className="hero-card-note">
-              NO PRESSURE. JUST A CONVERSATION.
-            </span>
 
           </div>
 
         </div>
 
 
-        <div className="contact-hero-bottom">
+        <div className="contact-hero-scroll">
 
-          <div className="container-custom">
+          <span>SCROLL TO EXPLORE</span>
 
-            <span>SCROLL TO CONTACT</span>
+          <div className="scroll-line">
+            <span></span>
+          </div>
 
-            <i className="bi bi-arrow-down"></i>
+          <i className="bi bi-arrow-down"></i>
+
+        </div>
+
+      </section>
+
+
+      {/* =====================================================
+          CONTACT INFORMATION
+      ===================================================== */}
+      <section className="section-padding contact-main">
+
+        <div className="container-custom">
+
+          <div className="contact-intro-grid">
+
+            <div className="contact-intro-left">
+
+              <div className="section-label">
+                <span></span>
+                GET IN TOUCH
+              </div>
+
+              <h2 className="section-title">
+                Let's talk about
+                <br />
+                <span className="gradient-text">
+                  your next move.
+                </span>
+              </h2>
+
+            </div>
+
+            <div className="contact-intro-right">
+
+              <p>
+                Whether you're starting something completely new,
+                redesigning an existing website or looking for help
+                with a digital product, we'd love to understand what
+                you're trying to achieve.
+              </p>
+
+              <p>
+                Share as much or as little as you know.
+                We'll help you turn the initial conversation into
+                a clear and practical direction.
+              </p>
+
+            </div>
+
+          </div>
+
+
+          {/* CONTACT CARDS */}
+          <div className="contact-info-grid">
+
+            <a
+              href="mailto:hello@thecodemunk.in"
+              className="contact-info-card"
+            >
+
+              <div className="info-card-number">
+                01
+              </div>
+
+              <div className="info-card-icon">
+                <i className="bi bi-envelope"></i>
+              </div>
+
+              <div className="info-card-content">
+
+                <span>EMAIL</span>
+
+                <h3>
+                  hello@thecodemunk.in
+                </h3>
+
+                <p>
+                  Send your project details,
+                  questions or ideas.
+                </p>
+
+              </div>
+
+              <div className="info-card-arrow">
+                <i className="bi bi-arrow-up-right"></i>
+              </div>
+
+            </a>
+
+
+            <div className="contact-info-card">
+
+              <div className="info-card-number">
+                02
+              </div>
+
+              <div className="info-card-icon">
+                <i className="bi bi-geo-alt"></i>
+              </div>
+
+              <div className="info-card-content">
+
+                <span>LOCATION</span>
+
+                <h3>
+                  Waraseoni
+                </h3>
+
+                <p>
+                  Balaghat, Madhya Pradesh,
+                  India.
+                </p>
+
+              </div>
+
+              <div className="info-card-arrow">
+                <i className="bi bi-arrow-up-right"></i>
+              </div>
+
+            </div>
+
+
+            <div className="contact-info-card">
+
+              <div className="info-card-number">
+                03
+              </div>
+
+              <div className="info-card-icon">
+                <i className="bi bi-clock"></i>
+              </div>
+
+              <div className="info-card-content">
+
+                <span>WORKING HOURS</span>
+
+                <h3>
+                  Mon — Fri
+                </h3>
+
+                <p>
+                  10:00 AM — 6:00 PM
+                  <br />
+                  IST
+                </p>
+
+              </div>
+
+              <div className="info-card-arrow">
+                <i className="bi bi-calendar-check"></i>
+              </div>
+
+            </div>
 
           </div>
 
@@ -126,210 +309,84 @@ const Contact = () => {
 
 
       {/* =====================================================
-          CONTACT MAIN
+          FORM + MAP
       ===================================================== */}
-
-      <section className="section-padding contact-section">
+      <section
+        className="section-padding contact-form-section"
+        id="contact-form"
+      >
 
         <div className="container-custom">
 
-          <div className="contact-main-grid">
+          <div className="contact-form-layout">
 
-
-            {/* =================================================
-                LEFT INFO
+            {/* ================================================
+                FORM
             ================================================= */}
+            <div className="luxury-form-wrapper">
 
-            <div className="contact-info">
+              <div className="form-top-line"></div>
 
-              <div className="section-label">
-                <span></span>
-                GET IN TOUCH
-              </div>
-
-              <h2 className="section-title">
-
-                Start a
-                <br />
-
-                <span className="gradient-text">
-                  conversation.
-                </span>
-
-              </h2>
-
-              <p className="contact-intro">
-                Whether you have a complete project brief,
-                a rough idea or simply want to explore what's
-                possible, we're happy to talk.
-              </p>
-
-
-              <div className="contact-details">
-
-
-                {/* EMAIL */}
-
-                <a
-                  href="mailto:hello@thecodemunk.in"
-                  className="contact-detail"
-                >
-
-                  <span className="contact-icon">
-                    <i className="bi bi-envelope"></i>
-                  </span>
-
-                  <span className="contact-detail-content">
-
-                    <small>EMAIL</small>
-
-                    <strong>
-                      hello@thecodemunk.in
-                    </strong>
-
-                    <em>
-                      Send us your project details
-                    </em>
-
-                  </span>
-
-                  <i className="bi bi-arrow-up-right contact-detail-arrow"></i>
-
-                </a>
-
-
-                {/* LOCATION */}
-
-                <div className="contact-detail">
-
-                  <span className="contact-icon">
-                    <i className="bi bi-geo-alt"></i>
-                  </span>
-
-                  <span className="contact-detail-content">
-
-                    <small>LOCATION</small>
-
-                    <strong>
-                      Waraseoni, Madhya Pradesh
-                    </strong>
-
-                    <em>
-                      India · Working with clients worldwide
-                    </em>
-
-                  </span>
-
-                </div>
-
-
-                {/* HOURS */}
-
-                <div className="contact-detail">
-
-                  <span className="contact-icon">
-                    <i className="bi bi-clock"></i>
-                  </span>
-
-                  <span className="contact-detail-content">
-
-                    <small>WORKING HOURS</small>
-
-                    <strong>
-                      Mon — Fri / 10 AM — 6 PM
-                    </strong>
-
-                    <em>
-                      Usually online during business hours
-                    </em>
-
-                  </span>
-
-                </div>
-
-              </div>
-
-
-              {/* Response */}
-
-              <div className="contact-response">
-
-                <div className="response-icon">
-                  <i className="bi bi-clock-history"></i>
-                </div>
+              <div className="form-heading">
 
                 <div>
 
-                  <strong>
-                    What happens next?
-                  </strong>
+                  <span className="form-kicker">
+                    PROJECT ENQUIRY
+                  </span>
+
+                  <h2>
+                    Tell us about
+                    <br />
+                    <span className="gradient-text">
+                      your project.
+                    </span>
+                  </h2>
 
                   <p>
-                    We review your message, understand your
-                    requirements and get back to you with
-                    the next steps.
+                    A few details are enough to get
+                    the conversation started.
                   </p>
 
                 </div>
 
-              </div>
-
-            </div>
-
-
-            {/* =================================================
-                FORM
-            ================================================= */}
-
-            <div className="contact-form-wrapper">
-
-              <div className="form-header">
-
-                <div>
-
-                  <span>
-                    PROJECT ENQUIRY
-                  </span>
-
-                  <h3>
-                    Tell us about
-                    <br />
-                    <strong>your project.</strong>
-                  </h3>
-
-                </div>
-
-                <div className="form-number">
+                <span className="form-big-number">
                   01
-                </div>
+                </span>
 
               </div>
 
 
               {submitted ? (
 
-                <div className="form-success">
+                <div className="contact-success">
 
-                  <div className="success-icon">
+                  <div className="success-circle">
+
                     <i className="bi bi-check-lg"></i>
+
                   </div>
 
+                  <span className="success-label">
+                    MESSAGE RECEIVED
+                  </span>
+
                   <h3>
-                    Message received.
+                    Thanks for reaching out.
                   </h3>
 
                   <p>
-                    Thanks for reaching out.
-                    We'll get back to you with the next steps.
+                    Your enquiry has been recorded.
+                    We'll review the details and get
+                    back to you with the next steps.
                   </p>
 
                   <button
                     type="button"
+                    className="success-button"
                     onClick={() => setSubmitted(false)}
-                    className="success-again"
                   >
-                    Send another message
-
+                    Send Another Message
                     <i className="bi bi-arrow-right"></i>
                   </button>
 
@@ -338,42 +395,49 @@ const Contact = () => {
               ) : (
 
                 <form
-                  className="contact-form"
+                  className="luxury-contact-form"
                   onSubmit={handleSubmit}
                 >
 
                   {/* NAME + EMAIL */}
+                  <div className="form-grid-two">
 
-                  <div className="form-row">
-
-                    <div className="form-group">
+                    <div className="luxury-field">
 
                       <label>
-                        Your Name
+                        YOUR NAME
                         <span>*</span>
                       </label>
 
-                      <input
-                        type="text"
-                        placeholder="Enter your name"
-                        required
-                      />
+                      <div className="field-input">
+                        <i className="bi bi-person"></i>
+
+                        <input
+                          type="text"
+                          placeholder="Enter your name"
+                          required
+                        />
+                      </div>
 
                     </div>
 
 
-                    <div className="form-group">
+                    <div className="luxury-field">
 
                       <label>
-                        Email Address
+                        EMAIL ADDRESS
                         <span>*</span>
                       </label>
 
-                      <input
-                        type="email"
-                        placeholder="you@example.com"
-                        required
-                      />
+                      <div className="field-input">
+                        <i className="bi bi-envelope"></i>
+
+                        <input
+                          type="email"
+                          placeholder="you@example.com"
+                          required
+                        />
+                      </div>
 
                     </div>
 
@@ -381,71 +445,82 @@ const Contact = () => {
 
 
                   {/* COMPANY + PROJECT */}
+                  <div className="form-grid-two">
 
-                  <div className="form-row">
-
-                    <div className="form-group">
+                    <div className="luxury-field">
 
                       <label>
-                        Company / Brand
+                        COMPANY / BRAND
                       </label>
 
-                      <input
-                        type="text"
-                        placeholder="Your company name"
-                      />
+                      <div className="field-input">
+                        <i className="bi bi-building"></i>
+
+                        <input
+                          type="text"
+                          placeholder="Your company or brand"
+                        />
+                      </div>
 
                     </div>
 
 
-                    <div className="form-group">
+                    <div className="luxury-field">
 
                       <label>
-                        Project Type
+                        PROJECT TYPE
                         <span>*</span>
                       </label>
 
-                      <select
-                        required
-                        defaultValue=""
-                      >
+                      <div className="field-input select-field">
 
-                        <option
-                          value=""
-                          disabled
+                        <i className="bi bi-layers"></i>
+
+                        <select
+                          required
+                          defaultValue=""
                         >
-                          Select project type
-                        </option>
 
-                        <option>
-                          Website
-                        </option>
+                          <option
+                            value=""
+                            disabled
+                          >
+                            Select project type
+                          </option>
 
-                        <option>
-                          Web Application
-                        </option>
+                          <option value="website">
+                            Website Development
+                          </option>
 
-                        <option>
-                          UI / UX Design
-                        </option>
+                          <option value="web-app">
+                            Web Application
+                          </option>
 
-                        <option>
-                          Mobile App
-                        </option>
+                          <option value="ui-ux">
+                            UI / UX Design
+                          </option>
 
-                        <option>
-                          API Integration
-                        </option>
+                          <option value="redesign">
+                            Website Redesign
+                          </option>
 
-                        <option>
-                          Website Redesign
-                        </option>
+                          <option value="api">
+                            API Integration
+                          </option>
 
-                        <option>
-                          Other
-                        </option>
+                          <option value="maintenance">
+                            Maintenance & Support
+                          </option>
 
-                      </select>
+                          <option value="other">
+                            Something Else
+                          </option>
+
+                        </select>
+
+                        <i className="bi bi-chevron-down select-arrow"></i>
+
+                      </div>
 
                     </div>
 
@@ -453,69 +528,72 @@ const Contact = () => {
 
 
                   {/* BUDGET */}
-
-                  <div className="form-group">
+                  <div className="luxury-field">
 
                     <label>
-                      Estimated Budget
+                      ESTIMATED BUDGET
                     </label>
 
-                    <div className="budget-options">
+                    <div className="budget-grid">
 
-                      <label className="budget-option">
+                      <label className="budget-card">
 
                         <input
                           type="radio"
                           name="budget"
-                          value="under-25k"
+                          value="under-25"
                         />
 
                         <span>
+                          <small>STARTING</small>
                           Under ₹25K
                         </span>
 
                       </label>
 
 
-                      <label className="budget-option">
+                      <label className="budget-card">
 
                         <input
                           type="radio"
                           name="budget"
-                          value="25-50k"
+                          value="25-50"
                         />
 
                         <span>
+                          <small>GROWING</small>
                           ₹25K — ₹50K
                         </span>
 
                       </label>
 
 
-                      <label className="budget-option">
+                      <label className="budget-card">
 
                         <input
                           type="radio"
                           name="budget"
-                          value="50-100k"
+                          value="50-100"
                         />
 
                         <span>
+                          <small>BUSINESS</small>
                           ₹50K — ₹1L
                         </span>
 
                       </label>
 
 
-                      <label className="budget-option">
+                      <label className="budget-card">
 
                         <input
                           type="radio"
                           name="budget"
-                          value="100k-plus"
+                          value="100-plus"
                         />
 
                         <span>
+                          <small>PREMIUM</small>
                           ₹1L+
                         </span>
 
@@ -527,42 +605,49 @@ const Contact = () => {
 
 
                   {/* MESSAGE */}
-
-                  <div className="form-group">
+                  <div className="luxury-field">
 
                     <label>
-                      Tell us about your project
+                      TELL US ABOUT YOUR PROJECT
                       <span>*</span>
                     </label>
 
-                    <textarea
-                      rows="6"
-                      placeholder="What are you building? What problem are you trying to solve?"
-                      required
-                    ></textarea>
+                    <div className="field-textarea">
+
+                      <i className="bi bi-chat-left-text"></i>
+
+                      <textarea
+                        rows="7"
+                        placeholder="What are you building? What problem are you trying to solve? What would success look like?"
+                        required
+                      ></textarea>
+
+                    </div>
 
                   </div>
 
 
                   {/* FORM FOOTER */}
+                  <div className="form-submit-row">
 
-                  <div className="form-footer">
+                    <div className="privacy-note">
 
-                    <p>
                       <i className="bi bi-shield-check"></i>
 
-                      Your information stays private.
-                    </p>
+                      <span>
+                        Your information stays private
+                        and is only used to respond to
+                        your enquiry.
+                      </span>
+
+                    </div>
 
                     <button
                       type="submit"
-                      className="btn-primary-custom contact-submit"
+                      className="btn-primary-custom form-submit"
                     >
-
-                      Send Message
-
+                      Send Enquiry
                       <i className="bi bi-arrow-up-right"></i>
-
                     </button>
 
                   </div>
@@ -573,127 +658,105 @@ const Contact = () => {
 
             </div>
 
-          </div>
 
-        </div>
+            {/* ================================================
+                MAP + LOCATION
+            ================================================= */}
+            <div className="contact-location">
 
-      </section>
+              <div className="location-heading">
 
-
-      {/* =====================================================
-          WARASEONI MAP
-      ===================================================== */}
-
-      <section className="contact-map-section">
-
-        <div className="container-custom">
-
-          <div className="contact-map-heading">
-
-            <div>
-
-              <div className="section-label">
-
-                <span></span>
-
-                FIND US
-
-              </div>
-
-              <h2 className="section-title">
-
-                Based in
-                <br />
-
-                <span className="gradient-text">
-                  Waraseoni, MP.
+                <span className="form-kicker">
+                  FIND US
                 </span>
 
-              </h2>
+                <h3>
+                  Based in
+                  <br />
+                  <span className="gradient-text">
+                    Waraseoni.
+                  </span>
+                </h3>
 
-            </div>
-
-            <div className="map-heading-copy">
-
-              <span>
-                MADHYA PRADESH · INDIA
-              </span>
-
-              <p>
-                From a small town in Madhya Pradesh
-                to digital projects around the world.
-              </p>
-
-            </div>
-
-          </div>
-
-
-          <div className="contact-map-wrapper">
-
-            {/* Decorative map UI */}
-
-            <div className="map-top-bar">
-
-              <div className="map-status">
-
-                <span></span>
-
-                LOCATION ACTIVE
+                <p>
+                  We work remotely with clients across
+                  India and beyond, while our base is
+                  in Waraseoni, Madhya Pradesh.
+                </p>
 
               </div>
 
-              <span>
-                21.7557° N · 80.0492° E
-              </span>
 
-            </div>
+              {/* GOOGLE MAP */}
+              <div className="map-wrapper">
 
+                <iframe
+                  title="The Code Munk - Waraseoni Madhya Pradesh"
+                  src="https://www.google.com/maps?q=Waraseoni,Madhya%20Pradesh,India&output=embed"
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                ></iframe>
 
-            {/* Google Maps */}
+                <div className="map-overlay">
 
-            <iframe
-              title="The Code Munk - Waraseoni Madhya Pradesh"
-              src="https://www.google.com/maps?q=Waraseoni,Madhya%20Pradesh,India&output=embed"
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              allowFullScreen
-            ></iframe>
+                  <div className="map-location-pin">
+                    <i className="bi bi-geo-alt-fill"></i>
+                  </div>
 
+                  <div className="map-location-info">
 
-            {/* Floating location card */}
+                    <strong>
+                      Waraseoni
+                    </strong>
 
-            <div className="map-location-card">
+                    <span>
+                      Madhya Pradesh, India
+                    </span>
 
-              <div className="map-location-icon">
+                  </div>
 
-                <i className="bi bi-geo-alt-fill"></i>
-
-              </div>
-
-              <div>
-
-                <span>
-                  OUR BASE
-                </span>
-
-                <strong>
-                  Waraseoni
-                </strong>
-
-                <small>
-                  Balaghat · Madhya Pradesh
-                </small>
+                </div>
 
               </div>
 
+
+              {/* LOCATION DETAIL */}
+              <div className="location-detail">
+
+                <div className="location-detail-icon">
+                  <i className="bi bi-compass"></i>
+                </div>
+
+                <div>
+
+                  <span>
+                    OUR BASE
+                  </span>
+
+                  <strong>
+                    Waraseoni, Balaghat
+                  </strong>
+
+                  <p>
+                    Madhya Pradesh · India
+                  </p>
+
+                </div>
+
+              </div>
+
+
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=Waraseoni%2CMadhya%20Pradesh%2CIndia"
+                target="_blank"
+                rel="noreferrer"
+                className="open-map-button"
+              >
+                Open in Google Maps
+                <i className="bi bi-arrow-up-right"></i>
+              </a>
+
             </div>
-
-
-            <div className="map-corner map-corner-tl"></div>
-            <div className="map-corner map-corner-tr"></div>
-            <div className="map-corner map-corner-bl"></div>
-            <div className="map-corner map-corner-br"></div>
 
           </div>
 
@@ -703,133 +766,132 @@ const Contact = () => {
 
 
       {/* =====================================================
-          SERVICES
+          WHY CONTACT US
       ===================================================== */}
+      <section className="contact-values">
 
-      <section className="contact-services">
+        <div className="contact-values-grid"></div>
 
         <div className="container-custom">
 
-          <div className="contact-services-heading">
+          <div className="contact-values-heading">
 
             <div>
 
               <div className="section-label">
-
                 <span></span>
-
-                WHAT CAN WE HELP WITH?
-
+                WHY WORK WITH US
               </div>
 
               <h2 className="section-title">
-
-                Bring us your
+                More than a
                 <br />
-
                 <span className="gradient-text">
-                  challenge.
+                  service provider.
                 </span>
-
               </h2>
 
             </div>
 
             <p>
-              You don't need to have everything figured out.
-              Start with the problem and we'll help shape the solution.
+              We believe the best digital work comes from
+              clear communication, thoughtful decisions and
+              attention to the details that users actually notice.
             </p>
 
           </div>
 
 
-          <div className="contact-service-grid">
+          <div className="values-grid">
 
+            <div className="value-card">
 
-            <div className="contact-service-card">
+              <span className="value-number">
+                01
+              </span>
 
-              <span>01</span>
-
-              <i className="bi bi-code-slash"></i>
+              <div className="value-icon">
+                <i className="bi bi-bullseye"></i>
+              </div>
 
               <h3>
-                Build something new
+                Purpose First
               </h3>
 
               <p>
-                A new website, web application or digital
-                product from the ground up.
+                We start with your business goal,
+                not with a template. Every design and
+                development decision has a reason behind it.
               </p>
-
-              <div>
-                <i className="bi bi-arrow-up-right"></i>
-              </div>
 
             </div>
 
 
-            <div className="contact-service-card">
+            <div className="value-card">
 
-              <span>02</span>
+              <span className="value-number">
+                02
+              </span>
 
-              <i className="bi bi-magic"></i>
+              <div className="value-icon">
+                <i className="bi bi-code-square"></i>
+              </div>
 
               <h3>
-                Redesign something old
+                Clean Development
               </h3>
 
               <p>
-                Give an existing website or interface
-                a modern visual and technical upgrade.
+                Modern frontend architecture,
+                reusable components and responsive
+                implementation built for long-term use.
               </p>
-
-              <div>
-                <i className="bi bi-arrow-up-right"></i>
-              </div>
 
             </div>
 
 
-            <div className="contact-service-card">
+            <div className="value-card">
 
-              <span>03</span>
+              <span className="value-number">
+                03
+              </span>
 
-              <i className="bi bi-speedometer2"></i>
+              <div className="value-icon">
+                <i className="bi bi-lightning-charge"></i>
+              </div>
 
               <h3>
-                Improve performance
+                Performance Focus
               </h3>
 
               <p>
-                Make your existing digital experience
-                faster, cleaner and more responsive.
+                Beautiful interfaces should also feel
+                fast. We focus on responsive layouts,
+                efficient interactions and clean code.
               </p>
-
-              <div>
-                <i className="bi bi-arrow-up-right"></i>
-              </div>
 
             </div>
 
 
-            <div className="contact-service-card">
+            <div className="value-card">
 
-              <span>04</span>
+              <span className="value-number">
+                04
+              </span>
 
-              <i className="bi bi-lightbulb"></i>
+              <div className="value-icon">
+                <i className="bi bi-chat-square-heart"></i>
+              </div>
 
               <h3>
-                Explore an idea
+                Real Collaboration
               </h3>
 
               <p>
-                Not sure where to start? Let's turn
-                your early idea into a practical direction.
+                You stay involved throughout the process
+                with clear communication, practical updates
+                and no unnecessary complexity.
               </p>
-
-              <div>
-                <i className="bi bi-arrow-up-right"></i>
-              </div>
 
             </div>
 
@@ -843,114 +905,268 @@ const Contact = () => {
       {/* =====================================================
           PROCESS
       ===================================================== */}
-
       <section className="section-padding contact-process">
 
         <div className="container-custom">
 
-          <div className="process-heading">
+          <div className="process-top">
 
-            <div className="section-label">
+            <div>
 
-              <span></span>
+              <div className="section-label">
+                <span></span>
+                HOW IT WORKS
+              </div>
 
-              WHAT HAPPENS NEXT
+              <h2 className="section-title">
+                From first message
+                <br />
+                to <span className="gradient-text">
+                  launch.
+                </span>
+              </h2>
 
             </div>
 
-            <h2 className="section-title">
-
-              Simple process.
-              <br />
-
-              <span className="gradient-text">
-                No confusion.
-              </span>
-
-            </h2>
+            <p>
+              No complicated agency process.
+              Just a clear sequence that keeps everyone
+              aligned from the first conversation to delivery.
+            </p>
 
           </div>
 
 
-          <div className="contact-process-grid">
+          <div className="process-line"></div>
 
 
-            <div className="contact-process-item">
+          <div className="process-grid">
 
-              <span>01</span>
+            <div className="process-card">
+
+              <span className="process-number">
+                01
+              </span>
 
               <div className="process-icon">
                 <i className="bi bi-chat-left-text"></i>
               </div>
 
+              <span className="process-label">
+                STEP ONE
+              </span>
+
               <h3>
-                We talk
+                We Talk
               </h3>
 
               <p>
-                You tell us about your idea, goals,
-                challenges and expectations.
+                You tell us about your idea,
+                business, users and goals.
               </p>
 
             </div>
 
 
-            <div className="contact-process-item">
+            <div className="process-card">
 
-              <span>02</span>
+              <span className="process-number">
+                02
+              </span>
 
               <div className="process-icon">
                 <i className="bi bi-search"></i>
               </div>
 
+              <span className="process-label">
+                STEP TWO
+              </span>
+
               <h3>
-                We understand
+                We Understand
               </h3>
 
               <p>
-                We analyze the requirements and identify
-                the right technical and design direction.
+                We study the requirements and
+                identify the right technical direction.
               </p>
 
             </div>
 
 
-            <div className="contact-process-item">
+            <div className="process-card">
 
-              <span>03</span>
+              <span className="process-number">
+                03
+              </span>
 
               <div className="process-icon">
-                <i className="bi bi-layers"></i>
+                <i className="bi bi-bezier2"></i>
               </div>
 
+              <span className="process-label">
+                STEP THREE
+              </span>
+
               <h3>
-                We plan
+                We Design
               </h3>
 
               <p>
-                We define the scope, priorities, timeline
-                and next steps for the project.
+                We shape the visual language,
+                experience and interface structure.
               </p>
 
             </div>
 
 
-            <div className="contact-process-item">
+            <div className="process-card">
 
-              <span>04</span>
+              <span className="process-number">
+                04
+              </span>
 
               <div className="process-icon">
                 <i className="bi bi-rocket-takeoff"></i>
               </div>
 
+              <span className="process-label">
+                STEP FOUR
+              </span>
+
               <h3>
-                We build
+                We Build
               </h3>
 
               <p>
-                Once everything is aligned, we start
-                turning the idea into a real product.
+                Once everything is aligned,
+                development begins and the product comes alive.
               </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      {/* =====================================================
+          FAQ / QUICK ANSWERS
+      ===================================================== */}
+      <section className="contact-faq">
+
+        <div className="container-custom">
+
+          <div className="faq-heading">
+
+            <div className="section-label">
+              <span></span>
+              BEFORE YOU REACH OUT
+            </div>
+
+            <h2 className="section-title">
+              Good to
+              <br />
+              <span className="gradient-text">
+                know.
+              </span>
+            </h2>
+
+          </div>
+
+
+          <div className="faq-list">
+
+            <div className="faq-item">
+
+              <span>01</span>
+
+              <div>
+
+                <h3>
+                  Do I need a complete project brief?
+                </h3>
+
+                <p>
+                  Not at all. If you only have an idea,
+                  problem or rough direction, that's enough
+                  for the first conversation.
+                </p>
+
+              </div>
+
+              <i className="bi bi-arrow-up-right"></i>
+
+            </div>
+
+
+            <div className="faq-item">
+
+              <span>02</span>
+
+              <div>
+
+                <h3>
+                  Do you work with clients remotely?
+                </h3>
+
+                <p>
+                  Yes. The Code Munk is remote-friendly,
+                  so communication and project collaboration
+                  can happen online.
+                </p>
+
+              </div>
+
+              <i className="bi bi-arrow-up-right"></i>
+
+            </div>
+
+
+            <div className="faq-item">
+
+              <span>03</span>
+
+              <div>
+
+                <h3>
+                  Can you redesign an existing website?
+                </h3>
+
+                <p>
+                  Yes. We can work on visual redesign,
+                  responsive improvements, frontend development,
+                  performance and overall user experience.
+                </p>
+
+              </div>
+
+              <i className="bi bi-arrow-up-right"></i>
+
+            </div>
+
+
+            <div className="faq-item">
+
+              <span>04</span>
+
+              <div>
+
+                <h3>
+                  What happens after I submit the form?
+                </h3>
+
+                <p>
+                  We'll review the information you provide
+                  and use it to understand your project before
+                  discussing the next practical step.
+                </p>
+
+              </div>
+
+              <i className="bi bi-arrow-up-right"></i>
 
             </div>
 
@@ -964,48 +1180,50 @@ const Contact = () => {
       {/* =====================================================
           FINAL CTA
       ===================================================== */}
+      <section className="contact-final-cta">
 
-      <section className="contact-cta">
-
-        <div className="contact-cta-grid"></div>
-        <div className="contact-cta-glow"></div>
+        <div className="final-cta-grid"></div>
+        <div className="final-cta-glow"></div>
 
         <div className="container-custom">
 
-          <div className="contact-cta-inner">
+          <div className="final-cta-content">
 
-            <span className="contact-cta-label">
-              HAVE A PROJECT IN MIND?
+            <span className="final-cta-label">
+              HAVE AN IDEA?
             </span>
 
             <h2>
-
-              Your next digital
-              <br />
-
-              experience starts
+              Let's make it
               <span className="gradient-text">
-                {" "}with a conversation.
+                {" "}real.
               </span>
-
             </h2>
 
             <p>
-              No complicated forms. No unnecessary meetings.
-              Just a straightforward conversation about what
-              you want to build.
+              The next great digital experience could
+              start with one simple conversation.
             </p>
 
-            <a
-              href="mailto:hello@thecodemunk.in"
-              className="btn-primary-custom"
-            >
+            <div className="final-cta-actions">
 
-              hello@thecodemunk.in
+              <a
+                href="mailto:hello@thecodemunk.in"
+                className="btn-primary-custom"
+              >
+                hello@thecodemunk.in
+                <i className="bi bi-arrow-up-right"></i>
+              </a>
 
-              <i className="bi bi-arrow-up-right"></i>
+              <Link
+                to="/projects"
+                className="btn-outline-custom"
+              >
+                Explore Our Work
+                <i className="bi bi-arrow-right"></i>
+              </Link>
 
-            </a>
+            </div>
 
           </div>
 

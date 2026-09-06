@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import "./Projects.css";
@@ -5,75 +6,98 @@ import "./Projects.css";
 const projects = [
   {
     number: "01",
-    title: "Digital Healthcare",
+    title: "Soni's Life Care",
     category: "Healthcare",
-    type: "Web Development",
+    type: "Business Website",
     year: "2026",
     description:
-      "A modern healthcare-focused digital experience designed to make information easier to discover and services easier to access.",
+      "A professional healthcare website created to present services, build patient trust and make important information easy to discover across desktop and mobile devices.",
     image:
-      "https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1600&q=90",
-    tags: ["React", "Responsive UI", "API"],
+      "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1600&q=90",
+    tags: ["React.js", "Responsive UI", "SEO"],
+    website: "https://sonislifecare.in/",
+    highlights: [
+      "Responsive healthcare interface",
+      "Clear service presentation",
+      "Mobile-first experience",
+      "Conversion-focused sections",
+    ],
   },
   {
     number: "02",
-    title: "Technology Platform",
+    title: "The Code Munk",
     category: "Technology",
-    type: "Web Application",
+    type: "Digital Studio Website",
     year: "2026",
     description:
-      "A technology-driven interface combining structured information, modern visuals and a scalable frontend experience.",
+      "The Code Munk's own digital presence, designed around modern frontend development, premium visual storytelling and a structured service experience.",
     image:
-      "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1600&q=90",
-    tags: ["React.js", "JavaScript", "REST API"],
+      "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1600&q=90",
+    tags: ["React.js", "JavaScript", "CSS3", "Bootstrap"],
+    website: "https://thecodemunk.in/",
+    highlights: [
+      "React-based architecture",
+      "Premium dark interface",
+      "Responsive navigation",
+      "Reusable UI components",
+    ],
   },
   {
     number: "03",
-    title: "Creative Studio",
+    title: "Art Dwarka",
     category: "Creative",
-    type: "Brand Experience",
+    type: "Creative Website",
     year: "2026",
     description:
-      "A bold digital identity created for a creative-focused brand with immersive layouts and strong visual storytelling.",
+      "A visually-led website experience focused on presenting creative work through strong imagery, clean layouts and an engaging browsing experience.",
     image:
-      "https://images.unsplash.com/photo-1558655146-9f40138edfeb?auto=format&fit=crop&w=1600&q=90",
-    tags: ["UI / UX", "Branding", "Frontend"],
+      "https://images.unsplash.com/photo-1549490349-8643362247b5?auto=format&fit=crop&w=1600&q=90",
+    tags: ["React", "UI Design", "Responsive"],
+    website: "https://artdwarka.com/",
+    highlights: [
+      "Visual-first layouts",
+      "Responsive gallery experience",
+      "Structured content hierarchy",
+      "Modern interaction patterns",
+    ],
   },
   {
     number: "04",
-    title: "Digital Workspace",
-    category: "SaaS",
-    type: "Product Interface",
+    title: "Mr Makeover Salons",
+    category: "Business",
+    type: "Business Website",
     year: "2026",
     description:
-      "A clean productivity experience focused on usability, information hierarchy and efficient digital workflows.",
+      "A modern salon-focused digital experience built to showcase services, establish brand presence and make the customer journey simple.",
     image:
-      "https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1600&q=90",
-    tags: ["Dashboard", "Responsive", "UX"],
+      "https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1600&q=90",
+    tags: ["React.js", "UI / UX", "Responsive UI"],
+    website: "https://mrmakeoversalons.in/",
+    highlights: [
+      "Service-focused structure",
+      "Mobile-friendly interface",
+      "Visual brand presentation",
+      "Simple customer journey",
+    ],
   },
   {
     number: "05",
-    title: "Mobile Experience",
-    category: "Mobile App",
-    type: "Application UI",
+    title: "TribsP Network",
+    category: "Organization",
+    type: "Organization Website",
     year: "2026",
     description:
-      "A mobile-first experience designed around simple navigation, accessible interactions and a consistent visual system.",
+      "A structured digital platform created to communicate the organization's purpose, information and activities through a clear and accessible web experience.",
     image:
-      "https://images.unsplash.com/photo-1551650975-87deedd944c3?auto=format&fit=crop&w=1600&q=90",
-    tags: ["Mobile UI", "React Native", "API"],
-  },
-  {
-    number: "06",
-    title: "Brand Experience",
-    category: "Branding",
-    type: "Digital Experience",
-    year: "2026",
-    description:
-      "A distinctive digital presence combining brand personality, editorial layouts and conversion-focused experiences.",
-    image:
-      "https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=1600&q=90",
-    tags: ["Creative", "UI Design", "Development"],
+      "https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1600&q=90",
+    tags: ["React.js", "Frontend", "Responsive"],
+    website: "https://tribspnetwork.org/",
+    highlights: [
+      "Information architecture",
+      "Responsive frontend",
+      "Accessible content structure",
+      "Clear navigation experience",
+    ],
   },
 ];
 
@@ -82,9 +106,8 @@ const categories = [
   "Healthcare",
   "Technology",
   "Creative",
-  "SaaS",
-  "Mobile App",
-  "Branding",
+  "Business",
+  "Organization",
 ];
 
 const Projects = () => {
@@ -94,17 +117,17 @@ const Projects = () => {
     activeCategory === "All"
       ? projects
       : projects.filter(
-          (project) => project.category === activeCategory
-        );
+        (project) => project.category === activeCategory
+      );
 
-  const featuredProject = projects[0];
+  const featuredProject = projects[1];
 
   return (
     <div className="projects-page">
 
-      {/* =========================================
+      {/* =====================================================
           HERO
-      ========================================= */}
+      ===================================================== */}
 
       <section className="projects-hero">
 
@@ -118,37 +141,98 @@ const Projects = () => {
 
             <div className="projects-kicker">
               <span></span>
-              OUR WORK
+              SELECTED WORK / REACT & FRONTEND
             </div>
 
             <h1>
-              Ideas made
+              We build
               <span className="gradient-text">
-                {" "}visible.
+                {" "}what people use.
               </span>
             </h1>
 
             <p>
-              We turn ideas, business goals and creative
-              thinking into digital experiences people can
-              actually use and remember.
+              From business websites to modern digital interfaces,
+              we use React, JavaScript and thoughtful frontend
+              engineering to turn ideas into real experiences.
             </p>
 
             <div className="projects-hero-meta">
 
               <div>
-                <strong>06</strong>
-                <span>SELECTED PROJECTS</span>
+                <strong>05</strong>
+                <span>LIVE PROJECTS</span>
               </div>
 
               <div>
-                <strong>03+</strong>
-                <span>CORE CATEGORIES</span>
+                <strong>01</strong>
+                <span>CORE STACK</span>
               </div>
 
               <div>
-                <strong>∞</strong>
-                <span>NEW IDEAS</span>
+                <strong>100%</strong>
+                <span>RESPONSIVE FIRST</span>
+              </div>
+
+            </div>
+
+          </div>
+
+          <div className="projects-hero-code">
+
+            <div className="code-window">
+
+              <div className="code-window-top">
+                <span></span>
+                <span></span>
+                <span></span>
+
+                <small>
+                  project.jsx
+                </small>
+              </div>
+
+              <div className="code-window-body">
+
+                <div>
+                  <span className="code-purple">const</span>{" "}
+                  <span className="code-cyan">project</span>{" "}
+                  =
+                </div>
+
+                <div className="code-indent">
+                  {"{"}
+                </div>
+
+                <div className="code-indent-2">
+                  <span className="code-key">stack:</span>{" "}
+                  <span className="code-string">
+                    "React.js"
+                  </span>
+                </div>
+
+                <div className="code-indent-2">
+                  <span className="code-key">ui:</span>{" "}
+                  <span className="code-string">
+                    "Responsive"
+                  </span>
+                </div>
+
+                <div className="code-indent-2">
+                  <span className="code-key">api:</span>{" "}
+                  <span className="code-string">
+                    "Ready"
+                  </span>
+                </div>
+
+                <div className="code-indent">
+                  {"}"}
+                </div>
+
+                <div className="code-comment">
+                  // built for real users
+                </div>
+
               </div>
 
             </div>
@@ -165,9 +249,9 @@ const Projects = () => {
       </section>
 
 
-      {/* =========================================
+      {/* =====================================================
           FEATURED PROJECT
-      ========================================= */}
+      ===================================================== */}
 
       <section className="section-padding featured-project-section">
 
@@ -179,28 +263,30 @@ const Projects = () => {
 
               <div className="section-label">
                 <span></span>
-                FEATURED WORK
+                FEATURED PROJECT
               </div>
 
               <h2 className="section-title">
-                One project.
+                Built by us.
                 <br />
                 <span className="gradient-text">
-                  One story.
+                  Used as our identity.
                 </span>
               </h2>
 
             </div>
 
             <span className="project-index">
-              01 / 06
+              02 / 05
             </span>
 
           </div>
 
 
-          <Link
-            to="/contact"
+          <a
+            href={featuredProject.website}
+            target="_blank"
+            rel="noreferrer"
             className="featured-project"
           >
 
@@ -216,7 +302,7 @@ const Projects = () => {
               <div className="featured-project-top">
 
                 <span>
-                  FEATURED PROJECT
+                  THE CODE MUNK
                 </span>
 
                 <span>
@@ -261,22 +347,22 @@ const Projects = () => {
               </div>
 
               <span>
-                VIEW PROJECT
+                VISIT WEBSITE
                 <i className="bi bi-arrow-up-right"></i>
               </span>
 
             </div>
 
-          </Link>
+          </a>
 
         </div>
 
       </section>
 
 
-      {/* =========================================
-          ALL PROJECTS
-      ========================================= */}
+      {/* =====================================================
+          PROJECT LIST
+      ===================================================== */}
 
       <section className="section-padding projects-list">
 
@@ -288,20 +374,21 @@ const Projects = () => {
 
               <div className="section-label">
                 <span></span>
-                SELECTED PROJECTS
+                OUR PROJECTS
               </div>
 
               <h2 className="section-title">
-                Work that speaks
+                Real work.
                 <br />
                 <span className="gradient-text">
-                  for itself.
+                  Real experiences.
                 </span>
               </h2>
 
             </div>
 
             <div className="projects-count-box">
+
               <strong>
                 {String(filteredProjects.length).padStart(2, "0")}
               </strong>
@@ -309,6 +396,7 @@ const Projects = () => {
               <span>
                 PROJECTS
               </span>
+
             </div>
 
           </div>
@@ -319,6 +407,7 @@ const Projects = () => {
           <div className="project-filters">
 
             {categories.map((category) => (
+
               <button
                 key={category}
                 type="button"
@@ -331,6 +420,7 @@ const Projects = () => {
               >
                 {category}
               </button>
+
             ))}
 
           </div>
@@ -342,47 +432,55 @@ const Projects = () => {
 
             {filteredProjects.map((project) => (
 
-              <Link
-                to="/contact"
+              <article
                 className="full-project-card"
                 key={project.number}
               >
 
-                <div className="full-project-image">
+                <a
+                  href={project.website}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="full-project-image-link"
+                >
 
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                  />
+                  <div className="full-project-image">
 
-                  <div className="full-project-overlay"></div>
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                    />
 
-                  <div className="full-project-top">
+                    <div className="full-project-overlay"></div>
 
-                    <span>
-                      {project.number}
-                    </span>
+                    <div className="full-project-top">
 
-                    <span>
-                      {project.year}
-                    </span>
+                      <span>
+                        {project.number}
+                      </span>
+
+                      <span>
+                        {project.year}
+                      </span>
+
+                    </div>
+
+                    <div className="full-project-open">
+                      <i className="bi bi-arrow-up-right"></i>
+                    </div>
+
+                    <div className="full-project-category">
+                      {project.category}
+                    </div>
 
                   </div>
 
-                  <div className="full-project-open">
-                    <i className="bi bi-arrow-up-right"></i>
-                  </div>
-
-                  <div className="full-project-category">
-                    {project.category}
-                  </div>
-
-                </div>
+                </a>
 
 
                 <div className="full-project-info">
 
-                  <div>
+                  <div className="project-info-main">
 
                     <span>
                       {project.type}
@@ -392,15 +490,55 @@ const Projects = () => {
                       {project.title}
                     </h3>
 
+                    <p>
+                      {project.description}
+                    </p>
+
+                    <div className="project-card-tags">
+
+                      {project.tags.map((tag) => (
+                        <span key={tag}>
+                          {tag}
+                        </span>
+                      ))}
+
+                    </div>
+
                   </div>
 
-                  <div className="project-info-arrow">
+                  <a
+                    href={project.website}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="project-info-arrow"
+                    aria-label={`Visit ${project.title}`}
+                  >
                     <i className="bi bi-arrow-up-right"></i>
+                  </a>
+
+                </div>
+
+
+                <div className="project-highlights">
+
+                  <span>
+                    WHAT WE BUILT
+                  </span>
+
+                  <div>
+
+                    {project.highlights.map((item) => (
+                      <p key={item}>
+                        <i className="bi bi-check2"></i>
+                        {item}
+                      </p>
+                    ))}
+
                   </div>
 
                 </div>
 
-              </Link>
+              </article>
 
             ))}
 
@@ -411,9 +549,173 @@ const Projects = () => {
       </section>
 
 
-      {/* =========================================
-          PROJECT PHILOSOPHY
-      ========================================= */}
+      {/* =====================================================
+          REACT STACK
+      ===================================================== */}
+
+      <section className="projects-stack">
+
+        <div className="container-custom">
+
+          <div className="stack-heading">
+
+            <div>
+
+              <div className="section-label">
+                <span></span>
+                OUR FRONTEND STACK
+              </div>
+
+              <h2>
+                Simple tools.
+                <br />
+                <span className="gradient-text">
+                  Strong execution.
+                </span>
+              </h2>
+
+            </div>
+
+            <p>
+              We focus on practical technologies that help us
+              create maintainable, responsive and scalable
+              frontend experiences.
+            </p>
+
+          </div>
+
+
+          <div className="react-stack-grid">
+
+            <div className="react-stack-card featured-stack">
+
+              <div className="stack-icon">
+                <i className="bi bi-filetype-jsx"></i>
+              </div>
+
+              <span>01 / PRIMARY</span>
+
+              <h3>
+                React.js
+              </h3>
+
+              <p>
+                Component-driven frontend development for
+                interactive and maintainable interfaces.
+              </p>
+
+            </div>
+
+
+            <div className="react-stack-card">
+
+              <div className="stack-icon">
+                <i className="bi bi-filetype-js"></i>
+              </div>
+
+              <span>02 / CORE</span>
+
+              <h3>
+                JavaScript
+              </h3>
+
+              <p>
+                Modern ES6+ JavaScript for application logic,
+                interactions and dynamic experiences.
+              </p>
+
+            </div>
+
+
+            <div className="react-stack-card">
+
+              <div className="stack-icon">
+                <i className="bi bi-braces"></i>
+              </div>
+
+              <span>03 / STRUCTURE</span>
+
+              <h3>
+                HTML5
+              </h3>
+
+              <p>
+                Semantic structure designed for accessibility,
+                SEO and reliable browser experiences.
+              </p>
+
+            </div>
+
+
+            <div className="react-stack-card">
+
+              <div className="stack-icon">
+                <i className="bi bi-palette"></i>
+              </div>
+
+              <span>04 / VISUAL</span>
+
+              <h3>
+                CSS3
+              </h3>
+
+              <p>
+                Responsive layouts, animations, grids and
+                polished visual systems.
+              </p>
+
+            </div>
+
+
+            <div className="react-stack-card">
+
+              <div className="stack-icon">
+                <i className="bi bi-bootstrap"></i>
+              </div>
+
+              <span>05 / UI SYSTEM</span>
+
+              <h3>
+                Bootstrap
+              </h3>
+
+              <p>
+                Flexible responsive utilities and components
+                for efficient interface development.
+              </p>
+
+            </div>
+
+
+            <div className="react-stack-card">
+
+              <div className="stack-icon">
+                <i className="bi bi-cloud-arrow-down"></i>
+              </div>
+
+              <span>06 / INTEGRATION</span>
+
+              <h3>
+                REST API
+              </h3>
+
+              <p>
+                Connecting frontend experiences with structured
+                data and real application workflows.
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      {/* =====================================================
+          PHILOSOPHY
+      ===================================================== */}
 
       <section className="projects-philosophy">
 
@@ -429,25 +731,26 @@ const Projects = () => {
 
               <div className="section-label">
                 <span></span>
-                OUR APPROACH
+                HOW WE BUILD
               </div>
 
               <h2>
-                Good design gets
+                Good websites look
                 <br />
-                attention.
+                good.
                 <span className="gradient-text">
-                  {" "}Great experiences
+                  {" "}Great websites
                   <br />
-                  get remembered.
+                  work better.
                 </span>
               </h2>
 
               <p>
-                We don't build digital products simply to
-                make them look good. We think about the
-                people using them, the businesses behind
-                them and the experience connecting both.
+                Every project starts with understanding the
+                purpose behind the website. From structure and
+                responsive layouts to API integration and final
+                refinement, we focus on creating experiences
+                that are useful, fast and easy to navigate.
               </p>
 
               <Link
@@ -460,29 +763,54 @@ const Projects = () => {
 
             </div>
 
+
             <div className="philosophy-side">
 
               <div>
                 <span>01</span>
-                <strong>CLARITY</strong>
+
+                <strong>
+                  THINK
+                </strong>
+
                 <p>
-                  Simple interfaces with a clear purpose.
+                  Understand the business and user problem.
                 </p>
               </div>
 
               <div>
                 <span>02</span>
-                <strong>CRAFT</strong>
+
+                <strong>
+                  DESIGN
+                </strong>
+
                 <p>
-                  Attention to detail in every interaction.
+                  Create a clear and purposeful interface.
                 </p>
               </div>
 
               <div>
                 <span>03</span>
-                <strong>PERFORMANCE</strong>
+
+                <strong>
+                  DEVELOP
+                </strong>
+
                 <p>
-                  Fast and responsive digital experiences.
+                  Build responsive React components and flows.
+                </p>
+              </div>
+
+              <div>
+                <span>04</span>
+
+                <strong>
+                  REFINE
+                </strong>
+
+                <p>
+                  Test, optimize and polish the final experience.
                 </p>
               </div>
 
@@ -495,9 +823,9 @@ const Projects = () => {
       </section>
 
 
-      {/* =========================================
+      {/* =====================================================
           CTA
-      ========================================= */}
+      ===================================================== */}
 
       <section className="projects-cta">
 
@@ -509,22 +837,22 @@ const Projects = () => {
           <div className="projects-cta-inner">
 
             <span>
-              HAVE AN IDEA?
+              HAVE A PROJECT IN MIND?
             </span>
 
             <h2>
-              Your project could
+              Let's build your
               <br />
-              be the next
+              next digital
               <span className="gradient-text">
-                {" "}story.
+                {" "}experience.
               </span>
             </h2>
 
             <p>
-              Tell us what you're building, what you're
-              trying to solve and where you want to go.
-              Let's create something worth showing.
+              Have a website idea, existing design or business
+              that needs a better digital presence? Tell us what
+              you're building and we'll take it from there.
             </p>
 
             <Link
@@ -546,3 +874,4 @@ const Projects = () => {
 };
 
 export default Projects;
+

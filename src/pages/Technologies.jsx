@@ -7,64 +7,107 @@ const technologies = [
     title: "JavaScript",
     type: "LANGUAGE",
     level: "CORE",
-    text: "Modern JavaScript for interactive, dynamic and scalable digital experiences.",
+    code: "JS / ES6+",
+    text: "The logic layer behind interactive experiences, dynamic interfaces and API-driven applications.",
     tags: ["ES6+", "Async", "DOM", "Logic"],
+    accent: "js",
   },
   {
     icon: "bi-filetype-jsx",
     title: "React.js",
     type: "FRONTEND",
     level: "PRIMARY",
-    text: "Component-driven interfaces built for performance, flexibility and maintainability.",
+    code: "REACT / UI",
+    text: "Component-driven frontend architecture for reusable, maintainable and high-quality digital products.",
     tags: ["Components", "Hooks", "State", "SPA"],
+    accent: "react",
   },
   {
     icon: "bi-filetype-html",
     title: "HTML5",
-    type: "WEB",
+    type: "WEB FOUNDATION",
     level: "CORE",
-    text: "Semantic and accessible structures that provide a strong foundation for modern websites.",
+    code: "HTML / SEMANTIC",
+    text: "Semantic markup that creates accessible, structured and search-friendly foundations for every interface.",
     tags: ["Semantic", "SEO", "Accessibility", "Structure"],
+    accent: "html",
   },
   {
     icon: "bi-filetype-css",
     title: "CSS3",
-    type: "STYLING",
+    type: "VISUAL SYSTEM",
     level: "CORE",
-    text: "Responsive layouts, animations and polished visual systems designed for every screen.",
+    code: "CSS / UI",
+    text: "Precision styling, responsive layouts, transitions and visual systems crafted for every screen size.",
     tags: ["Flexbox", "Grid", "Animation", "Responsive"],
+    accent: "css",
   },
   {
     icon: "bi-bootstrap",
     title: "Bootstrap",
-    type: "FRAMEWORK",
+    type: "UI FRAMEWORK",
     level: "UI SYSTEM",
-    text: "Reliable responsive components and layout systems for efficient product development.",
+    code: "BOOTSTRAP 5",
+    text: "A practical responsive framework for building consistent layouts and interfaces efficiently.",
     tags: ["Grid", "Components", "Utilities", "Responsive"],
+    accent: "bootstrap",
   },
   {
     icon: "bi-git",
     title: "Git",
     type: "VERSION CONTROL",
     level: "WORKFLOW",
-    text: "Reliable version control for organized development and collaborative project workflows.",
+    code: "GIT / VCS",
+    text: "Structured version control that keeps development organized, traceable and easier to collaborate on.",
     tags: ["Branches", "Commits", "Merge", "Workflow"],
+    accent: "git",
   },
   {
     icon: "bi-braces",
     title: "REST API",
     type: "INTEGRATION",
     level: "DATA",
-    text: "Clean API integrations that connect interfaces with dynamic and data-driven systems.",
+    code: "API / JSON",
+    text: "Connecting frontend experiences with real data, services and business systems through clean API integration.",
     tags: ["JSON", "Axios", "CRUD", "Integration"],
+    accent: "api",
   },
   {
     icon: "bi-phone",
     title: "Responsive UI",
     type: "EXPERIENCE",
     level: "EVERYWHERE",
-    text: "Interfaces that adapt naturally across mobile, tablet, laptop and large desktop screens.",
+    code: "MOBILE / DESKTOP",
+    text: "Interfaces engineered to feel natural across mobile, tablet, laptop and large desktop displays.",
     tags: ["Mobile", "Tablet", "Desktop", "UX"],
+    accent: "responsive",
+  },
+];
+
+const principles = [
+  {
+    number: "01",
+    title: "PERFORMANCE",
+    text: "Interfaces should feel fast, responsive and purposeful.",
+    icon: "bi-lightning-charge",
+  },
+  {
+    number: "02",
+    title: "SCALABILITY",
+    text: "The foundation should support future features and growth.",
+    icon: "bi-diagram-3",
+  },
+  {
+    number: "03",
+    title: "MAINTAINABILITY",
+    text: "Readable architecture makes future improvements easier.",
+    icon: "bi-layers",
+  },
+  {
+    number: "04",
+    title: "FLEXIBILITY",
+    text: "Technology should adapt as the product evolves.",
+    icon: "bi-arrows-angle-expand",
   },
 ];
 
@@ -73,25 +116,25 @@ const workflow = [
     number: "01",
     icon: "bi-lightbulb",
     title: "Understand",
-    text: "Goals, users and business requirements.",
+    text: "We begin with the business goal, audience, content and technical requirements.",
   },
   {
     number: "02",
     icon: "bi-bezier2",
-    title: "Design",
-    text: "Structure, visual language and interactions.",
+    title: "Structure",
+    text: "We define information hierarchy, components, pages and interaction patterns.",
   },
   {
     number: "03",
     icon: "bi-code-slash",
     title: "Build",
-    text: "Reusable components and clean code.",
+    text: "We turn the structure into reusable components and clean frontend code.",
   },
   {
     number: "04",
     icon: "bi-speedometer2",
-    title: "Optimize",
-    text: "Performance, responsiveness and quality.",
+    title: "Refine",
+    text: "We improve responsiveness, performance, consistency and overall experience.",
   },
 ];
 
@@ -99,9 +142,9 @@ const Technologies = () => {
   return (
     <div className="technologies-page">
 
-      {/* =========================================
+      {/* =====================================================
           HERO
-      ========================================= */}
+      ===================================================== */}
 
       <section className="technologies-hero">
 
@@ -109,13 +152,19 @@ const Technologies = () => {
         <div className="technologies-hero-grid"></div>
         <div className="technologies-hero-glow"></div>
 
+        <div className="tech-hero-noise"></div>
+
         <div className="container-custom technologies-hero-inner">
 
           <div className="technologies-hero-content">
 
             <div className="technologies-kicker">
               <span></span>
-              OUR STACK
+              TECHNOLOGY / 01
+            </div>
+
+            <div className="hero-mini-label">
+              DIGITAL ENGINEERING SYSTEM
             </div>
 
             <h1>
@@ -126,9 +175,9 @@ const Technologies = () => {
             </h1>
 
             <p>
-              We choose practical, modern technologies that help
-              us create digital products that are fast, scalable,
-              responsive and ready for the future.
+              We use practical, modern technologies to build
+              digital experiences that are fast, responsive,
+              maintainable and designed around real business goals.
             </p>
 
             <div className="technology-hero-actions">
@@ -151,40 +200,81 @@ const Technologies = () => {
 
             </div>
 
+            <div className="hero-trust-row">
+
+              <div>
+                <i className="bi bi-check2-circle"></i>
+                <span>MODERN STACK</span>
+              </div>
+
+              <div>
+                <i className="bi bi-check2-circle"></i>
+                <span>RESPONSIVE FIRST</span>
+              </div>
+
+              <div>
+                <i className="bi bi-check2-circle"></i>
+                <span>API READY</span>
+              </div>
+
+            </div>
+
           </div>
 
 
-          {/* HERO TECH VISUAL */}
+          {/* =================================================
+              HERO TECH VISUAL
+          ================================================= */}
 
           <div className="tech-orbit">
+
+            <div className="orbit-status">
+              <span></span>
+              SYSTEM ONLINE
+            </div>
 
             <div className="tech-orbit-ring orbit-ring-one"></div>
             <div className="tech-orbit-ring orbit-ring-two"></div>
             <div className="tech-orbit-ring orbit-ring-three"></div>
 
+            <div className="orbit-cross orbit-cross-top"></div>
+            <div className="orbit-cross orbit-cross-right"></div>
+            <div className="orbit-cross orbit-cross-bottom"></div>
+            <div className="orbit-cross orbit-cross-left"></div>
+
             <div className="tech-orbit-center">
-              <span>&lt;/&gt;</span>
-              <small>CODE</small>
+
+              <div className="center-code">
+                &lt;/&gt;
+              </div>
+
+              <small>THE CODE MUNK</small>
+
+              <span className="center-status">
+                ENGINEERING
+              </span>
+
             </div>
+
 
             <div className="orbit-tech orbit-tech-one">
               <i className="bi bi-filetype-jsx"></i>
-              <span>React</span>
+              <span>REACT</span>
             </div>
 
             <div className="orbit-tech orbit-tech-two">
               <i className="bi bi-filetype-js"></i>
-              <span>JS</span>
+              <span>JAVASCRIPT</span>
             </div>
 
             <div className="orbit-tech orbit-tech-three">
               <i className="bi bi-filetype-css"></i>
-              <span>CSS</span>
+              <span>CSS3</span>
             </div>
 
             <div className="orbit-tech orbit-tech-four">
               <i className="bi bi-git"></i>
-              <span>Git</span>
+              <span>GIT</span>
             </div>
 
           </div>
@@ -196,11 +286,13 @@ const Technologies = () => {
 
           <div className="container-custom">
 
-            <span>
-              ENGINEERED FOR DIGITAL
-            </span>
+            <span>ENGINEERED FOR DIGITAL</span>
 
             <div></div>
+
+            <span className="hero-scroll-number">
+              01 — 08
+            </span>
 
             <i className="bi bi-arrow-down"></i>
 
@@ -211,9 +303,9 @@ const Technologies = () => {
       </section>
 
 
-      {/* =========================================
-          STACK INTRO
-      ========================================= */}
+      {/* =====================================================
+          INTRO
+      ===================================================== */}
 
       <section
         className="section-padding technology-page-section"
@@ -243,50 +335,61 @@ const Technologies = () => {
 
             <div className="technology-intro-copy">
 
-              <span>
-                08 TECHNOLOGIES
-              </span>
+              <span>08 TECHNOLOGIES / 01 SYSTEM</span>
 
               <p>
-                The right technology is not about using
-                everything available. It's about choosing
-                what makes the product better, faster and
-                easier to maintain.
+                Great digital products are not created by
+                collecting the most tools. They are created
+                by choosing the right tools for the right
+                problem and using them with discipline.
               </p>
+
+              <div className="intro-line"></div>
+
+              <small>
+                OUR APPROACH
+                <strong>Practical over complicated.</strong>
+              </small>
 
             </div>
 
           </div>
 
 
-          {/* =========================================
+          {/* =================================================
               TECHNOLOGY CARDS
-          ========================================= */}
+          ================================================= */}
 
           <div className="technology-cards">
 
             {technologies.map((tech, index) => (
 
               <article
-                className="technology-card"
+                className={`technology-card technology-${tech.accent}`}
                 key={tech.title}
               >
 
-                <div className="technology-card-top">
-
-                  <span className="technology-number">
-                    0{index + 1}
+                <div className="technology-card-number">
+                  <span>
+                    {String(index + 1).padStart(2, "0")}
                   </span>
 
-                  <span className="technology-level">
+                  <span>
                     {tech.level}
                   </span>
-
                 </div>
 
 
-                <div className="technology-icon">
-                  <i className={`bi ${tech.icon}`}></i>
+                <div className="technology-card-top">
+
+                  <div className="technology-icon">
+                    <i className={`bi ${tech.icon}`}></i>
+                  </div>
+
+                  <span className="technology-code">
+                    {tech.code}
+                  </span>
+
                 </div>
 
 
@@ -319,8 +422,7 @@ const Technologies = () => {
                 <div className="technology-card-footer">
 
                   <span>
-                    {String(index + 1).padStart(2, "0")}
-                    {" "} / 08
+                    CORE TECHNOLOGY
                   </span>
 
                   <i className="bi bi-arrow-up-right"></i>
@@ -341,11 +443,13 @@ const Technologies = () => {
       </section>
 
 
-      {/* =========================================
-          TECH PHILOSOPHY
-      ========================================= */}
+      {/* =====================================================
+          TECHNOLOGY PHILOSOPHY
+      ===================================================== */}
 
       <section className="technology-philosophy">
+
+        <div className="philosophy-bg-grid"></div>
 
         <div className="container-custom">
 
@@ -353,16 +457,14 @@ const Technologies = () => {
 
             <div className="philosophy-label">
 
-              <span>
-                01
-              </span>
+              <span>02</span>
 
               <div></div>
 
               <small>
-                OUR
+                ENGINEERING
                 <br />
-                PHILOSOPHY
+                PRINCIPLES
               </small>
 
             </div>
@@ -372,7 +474,7 @@ const Technologies = () => {
 
               <div className="section-label">
                 <span></span>
-                HOW WE CHOOSE
+                HOW WE THINK
               </div>
 
               <h2>
@@ -385,48 +487,49 @@ const Technologies = () => {
               </h2>
 
               <p>
-                We don't choose a technology simply because
-                it is popular. We look at the product, the
-                users, the performance requirements and the
-                long-term needs before deciding how to build.
+                Every technology decision should have a reason.
+                We consider the product, users, performance,
+                maintainability and future requirements before
+                deciding how the interface should be built.
               </p>
+
+              <div className="philosophy-signature">
+                <span>THE CODE MUNK</span>
+                <small>BUILD WITH INTENTION.</small>
+              </div>
 
             </div>
 
 
             <div className="philosophy-points">
 
-              <div>
-                <span>01</span>
-                <strong>PERFORMANCE</strong>
-                <p>
-                  Fast interfaces and efficient experiences.
-                </p>
-              </div>
+              {principles.map((item) => (
 
-              <div>
-                <span>02</span>
-                <strong>SCALABILITY</strong>
-                <p>
-                  Architecture that can grow with the product.
-                </p>
-              </div>
+                <div
+                  className="philosophy-point"
+                  key={item.number}
+                >
 
-              <div>
-                <span>03</span>
-                <strong>MAINTAINABILITY</strong>
-                <p>
-                  Clean and understandable code structures.
-                </p>
-              </div>
+                  <div className="point-icon">
+                    <i className={`bi ${item.icon}`}></i>
+                  </div>
 
-              <div>
-                <span>04</span>
-                <strong>FLEXIBILITY</strong>
-                <p>
-                  Systems ready for future improvements.
-                </p>
-              </div>
+                  <div className="point-content">
+
+                    <div>
+                      <span>{item.number}</span>
+                      <strong>{item.title}</strong>
+                    </div>
+
+                    <p>
+                      {item.text}
+                    </p>
+
+                  </div>
+
+                </div>
+
+              ))}
 
             </div>
 
@@ -437,9 +540,125 @@ const Technologies = () => {
       </section>
 
 
-      {/* =========================================
+      {/* =====================================================
+          DEVELOPMENT STANDARD
+      ===================================================== */}
+
+      <section className="technology-standard">
+
+        <div className="container-custom">
+
+          <div className="standard-heading">
+
+            <div>
+
+              <div className="section-label">
+                <span></span>
+                DEVELOPMENT STANDARD
+              </div>
+
+              <h2>
+                Beyond the
+                <br />
+                <span className="gradient-text">
+                  technology.
+                </span>
+              </h2>
+
+            </div>
+
+            <p>
+              The tools matter, but the way they are used
+              matters more. Our frontend work focuses on
+              clarity, consistency and real-world usability.
+            </p>
+
+          </div>
+
+
+          <div className="standard-grid">
+
+            <div className="standard-card">
+
+              <span>01</span>
+
+              <i className="bi bi-phone"></i>
+
+              <h3>Responsive First</h3>
+
+              <p>
+                Interfaces are planned to work naturally
+                across mobile, tablet and desktop screens.
+              </p>
+
+              <div className="standard-line"></div>
+
+            </div>
+
+
+            <div className="standard-card">
+
+              <span>02</span>
+
+              <i className="bi bi-boxes"></i>
+
+              <h3>Reusable Components</h3>
+
+              <p>
+                Reusable UI patterns make products easier
+                to scale, update and maintain.
+              </p>
+
+              <div className="standard-line"></div>
+
+            </div>
+
+
+            <div className="standard-card">
+
+              <span>03</span>
+
+              <i className="bi bi-speedometer2"></i>
+
+              <h3>Performance Minded</h3>
+
+              <p>
+                We avoid unnecessary complexity and focus
+                on smooth, efficient user experiences.
+              </p>
+
+              <div className="standard-line"></div>
+
+            </div>
+
+
+            <div className="standard-card">
+
+              <span>04</span>
+
+              <i className="bi bi-shield-check"></i>
+
+              <h3>Clean Foundation</h3>
+
+              <p>
+                Structured code makes future changes
+                easier and development more predictable.
+              </p>
+
+              <div className="standard-line"></div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      {/* =====================================================
           WORKFLOW
-      ========================================= */}
+      ===================================================== */}
 
       <section className="section-padding technology-workflow">
 
@@ -466,8 +685,9 @@ const Technologies = () => {
 
             <p>
               Technology is only one part of the process.
-              We combine it with strategy, design and
-              continuous refinement to create better products.
+              We combine it with structure, design,
+              development and refinement to create
+              digital products with purpose.
             </p>
 
           </div>
@@ -492,6 +712,8 @@ const Technologies = () => {
 
                 </div>
 
+                <div className="workflow-line"></div>
+
                 <h3>
                   {item.title}
                 </h3>
@@ -515,9 +737,9 @@ const Technologies = () => {
       </section>
 
 
-      {/* =========================================
-          TECH MARQUEE
-      ========================================= */}
+      {/* =====================================================
+          MARQUEE
+      ===================================================== */}
 
       <section className="technology-marquee">
 
@@ -525,19 +747,38 @@ const Technologies = () => {
 
           <span>REACT.JS</span>
           <i>✦</i>
+
           <span>JAVASCRIPT</span>
           <i>✦</i>
+
           <span>HTML5</span>
           <i>✦</i>
+
           <span>CSS3</span>
           <i>✦</i>
+
           <span>BOOTSTRAP</span>
           <i>✦</i>
+
           <span>REST API</span>
           <i>✦</i>
+
           <span>GIT</span>
           <i>✦</i>
+
           <span>RESPONSIVE UI</span>
+          <i>✦</i>
+
+          <span>REACT.JS</span>
+          <i>✦</i>
+
+          <span>JAVASCRIPT</span>
+          <i>✦</i>
+
+          <span>HTML5</span>
+          <i>✦</i>
+
+          <span>CSS3</span>
           <i>✦</i>
 
         </div>
@@ -545,22 +786,26 @@ const Technologies = () => {
       </section>
 
 
-      {/* =========================================
-          CTA
-      ========================================= */}
+      {/* =====================================================
+          FINAL CTA
+      ===================================================== */}
 
       <section className="technology-cta">
 
         <div className="technology-cta-grid"></div>
         <div className="technology-cta-glow"></div>
 
+        <div className="cta-orbit"></div>
+
         <div className="container-custom">
 
           <div className="technology-cta-inner">
 
-            <span>
+            <div className="cta-index">
+              <span>03</span>
+              <div></div>
               READY TO BUILD?
-            </span>
+            </div>
 
             <h2>
               Let's turn technology
@@ -572,18 +817,27 @@ const Technologies = () => {
             </h2>
 
             <p>
-              Have an idea that needs the right technology
-              behind it? Let's talk about the product,
-              the challenge and the possibilities.
+              Have an idea, a website or a digital product
+              that needs a better frontend? Let's discuss
+              the challenge and build something purposeful.
             </p>
 
             <Link
               to="/contact"
-              className="btn-primary-custom"
+              className="btn-primary-custom cta-button"
             >
               Start a Project
               <i className="bi bi-arrow-up-right"></i>
             </Link>
+
+            <div className="cta-meta">
+
+              <span>REACT</span>
+              <span>UI / UX</span>
+              <span>API</span>
+              <span>RESPONSIVE</span>
+
+            </div>
 
           </div>
 

@@ -1,0 +1,644 @@
+/* =========================================================
+   THE CODE MUNK — PROJECT CARD
+   ========================================================= */
+
+.project-card {
+  position: relative;
+
+  width: 100%;
+
+  overflow: hidden;
+
+  background: var(--card);
+
+  border: 1px solid var(--border);
+
+  transition:
+    transform 0.5s ease,
+    border-color 0.5s ease,
+    box-shadow 0.5s ease;
+}
+
+
+/* =========================================================
+   IMAGE
+   ========================================================= */
+
+.project-image-wrap {
+  position: relative;
+
+  width: 100%;
+
+  height: 360px;
+
+  overflow: hidden;
+
+  background: #090b10;
+}
+
+
+.project-image {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  filter:
+    saturate(0.82)
+    brightness(0.72);
+
+  transform: scale(1);
+
+  transition:
+    transform 0.8s cubic-bezier(0.2, 0.65, 0.3, 1),
+    filter 0.8s ease;
+}
+
+
+/* =========================================================
+   DARK IMAGE OVERLAY
+   ========================================================= */
+
+.project-image-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(7, 8, 12, 0.08) 0%,
+      rgba(7, 8, 12, 0.18) 35%,
+      rgba(7, 8, 12, 0.88) 100%
+    );
+
+  z-index: 1;
+
+  transition:
+    background 0.5s ease;
+}
+
+
+/* =========================================================
+   IMAGE GRID
+   ========================================================= */
+
+.project-image-grid {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 2;
+
+  opacity: 0.16;
+
+  background-image:
+    linear-gradient(
+      rgba(255, 255, 255, 0.12) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.12) 1px,
+      transparent 1px
+    );
+
+  background-size:
+    50px 50px;
+
+  mask-image:
+    linear-gradient(
+      to bottom,
+      transparent,
+      black 30%,
+      black 75%,
+      transparent
+    );
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   PROJECT NUMBER
+   ========================================================= */
+
+.project-number {
+  position: absolute;
+
+  top: 20px;
+  left: 20px;
+
+  z-index: 4;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  width: 44px;
+  height: 44px;
+
+  border: 1px solid rgba(255, 255, 255, 0.15);
+
+  background:
+    rgba(7, 8, 12, 0.65);
+
+  backdrop-filter: blur(12px);
+
+  color: #ffffff;
+
+  font-size: 10px;
+
+  letter-spacing: 0.08em;
+
+  transition:
+    border-color 0.35s ease,
+    background 0.35s ease;
+}
+
+
+/* =========================================================
+   FLOATING CATEGORY
+   ========================================================= */
+
+.project-floating-category {
+  position: absolute;
+
+  right: 20px;
+  top: 20px;
+
+  z-index: 4;
+
+  padding: 8px 11px;
+
+  border: 1px solid rgba(139, 92, 246, 0.25);
+
+  background:
+    rgba(7, 8, 12, 0.65);
+
+  backdrop-filter: blur(12px);
+
+  color: #c5cbd7;
+
+  font-size: 8px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.12em;
+
+  text-transform: uppercase;
+}
+
+
+/* =========================================================
+   PROJECT ARROW
+   ========================================================= */
+
+.project-arrow {
+  position: absolute;
+
+  right: 20px;
+  bottom: 20px;
+
+  z-index: 5;
+
+  width: 54px;
+  height: 54px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border: 1px solid rgba(255, 255, 255, 0.18);
+
+  background:
+    rgba(7, 8, 12, 0.72);
+
+  backdrop-filter: blur(15px);
+
+  color: white;
+
+  text-decoration: none;
+
+  font-size: 15px;
+
+  transition:
+    background 0.35s ease,
+    border-color 0.35s ease,
+    color 0.35s ease,
+    transform 0.35s ease;
+}
+
+
+.project-arrow i {
+  transition:
+    transform 0.35s ease;
+}
+
+
+.project-arrow:hover {
+  color: white;
+
+  border-color: var(--cyan);
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--purple),
+      rgba(34, 211, 238, 0.7)
+    );
+
+  transform: translateY(-4px);
+}
+
+
+.project-arrow:hover i {
+  transform:
+    translate(3px, -3px);
+}
+
+
+/* =========================================================
+   INFO
+   ========================================================= */
+
+.project-info {
+  min-height: 115px;
+
+  padding: 24px 22px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 25px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(18, 22, 32, 1),
+      rgba(12, 14, 20, 1)
+    );
+
+  position: relative;
+
+  z-index: 2;
+}
+
+
+/* =========================================================
+   TITLE
+   ========================================================= */
+
+.project-title-wrap {
+  min-width: 0;
+}
+
+
+.project-category {
+  display: inline-block;
+
+  margin-bottom: 8px;
+
+  color: var(--cyan);
+
+  font-size: 8px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.16em;
+
+  text-transform: uppercase;
+}
+
+
+.project-info h3 {
+  margin: 0;
+
+  color: #f1f3f7;
+
+  font-size: 22px;
+
+  font-weight: 600;
+
+  line-height: 1.25;
+
+  letter-spacing: -0.02em;
+
+  transition:
+    color 0.35s ease;
+}
+
+
+/* =========================================================
+   RIGHT SIDE
+   ========================================================= */
+
+.project-info-right {
+  flex-shrink: 0;
+
+  display: flex;
+
+  align-items: flex-end;
+
+  flex-direction: column;
+
+  gap: 13px;
+}
+
+
+.project-line {
+  display: block;
+
+  width: 55px;
+
+  height: 1px;
+
+  background:
+    linear-gradient(
+      90deg,
+      var(--violet),
+      var(--cyan)
+    );
+
+  opacity: 0.6;
+
+  transition:
+    width 0.4s ease;
+}
+
+
+.project-view-link {
+  display: flex;
+
+  align-items: center;
+
+  gap: 6px;
+
+  color: #727d90;
+
+  text-decoration: none;
+
+  font-size: 9px;
+
+  font-weight: 500;
+
+  white-space: nowrap;
+
+  transition:
+    color 0.3s ease;
+}
+
+
+.project-view-link i {
+  font-size: 9px;
+
+  transition:
+    transform 0.3s ease;
+}
+
+
+.project-view-link:hover {
+  color: white;
+}
+
+
+.project-view-link:hover i {
+  transform:
+    translate(2px, -2px);
+
+  color: var(--cyan);
+}
+
+
+/* =========================================================
+   BOTTOM ACCENT
+   ========================================================= */
+
+.project-card-accent {
+  position: absolute;
+
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  height: 2px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      var(--purple),
+      var(--cyan),
+      transparent
+    );
+
+  transform:
+    scaleX(0);
+
+  transform-origin: center;
+
+  transition:
+    transform 0.5s ease;
+
+  z-index: 10;
+}
+
+
+/* =========================================================
+   CARD HOVER
+   ========================================================= */
+
+.project-card:hover {
+  transform:
+    translateY(-8px);
+
+  border-color:
+    rgba(139, 92, 246, 0.3);
+
+  box-shadow:
+    0 25px 70px rgba(0, 0, 0, 0.35),
+    0 0 45px rgba(124, 58, 237, 0.07);
+}
+
+
+.project-card:hover .project-image {
+  transform:
+    scale(1.08);
+
+  filter:
+    saturate(1)
+    brightness(0.86);
+}
+
+
+.project-card:hover .project-image-overlay {
+  background:
+    linear-gradient(
+      180deg,
+      rgba(7, 8, 12, 0.04) 0%,
+      rgba(7, 8, 12, 0.12) 30%,
+      rgba(7, 8, 12, 0.82) 100%
+    );
+}
+
+
+.project-card:hover .project-number {
+  border-color:
+    rgba(34, 211, 238, 0.35);
+
+  background:
+    rgba(7, 8, 12, 0.8);
+}
+
+
+.project-card:hover .project-info h3 {
+  color: white;
+}
+
+
+.project-card:hover .project-line {
+  width: 85px;
+}
+
+
+.project-card:hover .project-card-accent {
+  transform:
+    scaleX(1);
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 992px) {
+
+  .project-image-wrap {
+    height: 320px;
+  }
+
+  .project-info {
+    min-height: 105px;
+
+    padding: 20px;
+  }
+
+  .project-info h3 {
+    font-size: 20px;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 767px) {
+
+  .project-image-wrap {
+    height: 300px;
+  }
+
+  .project-info {
+    min-height: auto;
+
+    padding: 20px;
+
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    gap: 18px;
+  }
+
+  .project-info-right {
+    width: 100%;
+
+    align-items: flex-start;
+
+    flex-direction: row;
+
+    justify-content: space-between;
+  }
+
+  .project-line {
+    margin-top: 5px;
+  }
+
+  .project-view-link {
+    font-size: 9px;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+  .project-image-wrap {
+    height: 260px;
+  }
+
+  .project-number {
+    top: 14px;
+    left: 14px;
+
+    width: 38px;
+    height: 38px;
+  }
+
+  .project-floating-category {
+    top: 14px;
+    right: 14px;
+
+    padding: 7px 9px;
+  }
+
+  .project-arrow {
+    right: 14px;
+    bottom: 14px;
+
+    width: 46px;
+    height: 46px;
+  }
+
+  .project-info {
+    padding: 18px;
+  }
+
+  .project-info h3 {
+    font-size: 18px;
+  }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .project-card,
+  .project-image,
+  .project-arrow,
+  .project-arrow i,
+  .project-line,
+  .project-card-accent {
+    transition: none;
+  }
+
+}

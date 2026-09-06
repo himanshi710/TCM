@@ -1,0 +1,54 @@
+/* =========================
+   LARGE TABLET
+========================= */
+
+@media (max-width: 1100px) {
+  .container-custom {
+    width: min(
+      calc(100% - 40px),
+      1100px
+    );
+  }
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 991px) {
+  .desktop-only {
+    display: none !important;
+  }
+
+  .mobile-only {
+    display: block !important;
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 767px) {
+  .hide-mobile {
+    display: none !important;
+  }
+
+  .text-center-mobile {
+    text-align: center !important;
+  }
+}
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 575px) {
+  .container-custom {
+    width: calc(100% - 30px);
+  }
+
+  .hide-small {
+    display: none !important;
+  }
+}

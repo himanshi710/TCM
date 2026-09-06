@@ -1,0 +1,573 @@
+/* =========================================================
+   THE CODE MUNK — SERVICE CARD
+   PREMIUM DIGITAL AGENCY CARD
+   ========================================================= */
+
+.service-card {
+  position: relative;
+
+  min-height: 440px;
+
+  padding: 34px;
+
+  display: flex;
+  flex-direction: column;
+
+  overflow: hidden;
+
+  border: 1px solid var(--border);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.045),
+      rgba(255, 255, 255, 0.012)
+    );
+
+  transition:
+    transform 0.45s ease,
+    border-color 0.45s ease,
+    box-shadow 0.45s ease;
+
+  isolation: isolate;
+}
+
+
+/* =========================================================
+   HOVER
+   ========================================================= */
+
+.service-card:hover {
+  transform: translateY(-10px);
+
+  border-color: rgba(139, 92, 246, 0.42);
+
+  box-shadow:
+    0 25px 70px rgba(0, 0, 0, 0.35),
+    0 0 50px rgba(124, 58, 237, 0.08);
+}
+
+
+/* =========================================================
+   GRID BACKGROUND
+   ========================================================= */
+
+.service-card-grid {
+  position: absolute;
+  inset: 0;
+
+  z-index: -2;
+
+  background-image:
+    linear-gradient(
+      rgba(255, 255, 255, 0.025) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.025) 1px,
+      transparent 1px
+    );
+
+  background-size: 45px 45px;
+
+  opacity: 0.4;
+
+  mask-image:
+    linear-gradient(
+      to bottom right,
+      black,
+      transparent 70%
+    );
+
+  transition: opacity 0.4s ease;
+}
+
+.service-card:hover .service-card-grid {
+  opacity: 0.7;
+}
+
+
+/* =========================================================
+   GLOW
+   ========================================================= */
+
+.service-card-glow {
+  position: absolute;
+
+  width: 220px;
+  height: 220px;
+
+  right: -100px;
+  bottom: -100px;
+
+  border-radius: 50%;
+
+  background: var(--purple-glow);
+
+  filter: blur(65px);
+
+  opacity: 0;
+
+  z-index: -1;
+
+  transition:
+    opacity 0.5s ease,
+    transform 0.6s ease;
+}
+
+.service-card:hover .service-card-glow {
+  opacity: 1;
+
+  transform: scale(1.25);
+}
+
+
+/* =========================================================
+   TOP
+   ========================================================= */
+
+.service-card-top {
+  display: flex;
+
+  align-items: flex-start;
+
+  justify-content: space-between;
+
+  position: relative;
+
+  z-index: 2;
+}
+
+.service-number {
+  font-size: 12px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.18em;
+
+  color: var(--violet);
+
+  transition:
+    color 0.35s ease,
+    transform 0.35s ease;
+}
+
+.service-card:hover .service-number {
+  color: var(--cyan);
+
+  transform: translateX(3px);
+}
+
+
+/* =========================================================
+   ICON
+   ========================================================= */
+
+.service-icon-wrap {
+  position: relative;
+
+  width: 64px;
+  height: 64px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.service-icon {
+  width: 56px;
+  height: 56px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(139, 92, 246, 0.25);
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(124, 58, 237, 0.16),
+      rgba(34, 211, 238, 0.06)
+    );
+
+  color: var(--violet);
+
+  font-size: 23px;
+
+  transition:
+    transform 0.45s ease,
+    color 0.45s ease,
+    border-color 0.45s ease,
+    box-shadow 0.45s ease;
+}
+
+.service-card:hover .service-icon {
+  color: var(--cyan);
+
+  border-color: rgba(34, 211, 238, 0.45);
+
+  transform: rotate(-6deg) scale(1.08);
+
+  box-shadow:
+    0 0 30px rgba(34, 211, 238, 0.1);
+}
+
+.service-icon-ring {
+  position: absolute;
+
+  inset: 1px;
+
+  border: 1px dashed rgba(139, 92, 246, 0.2);
+
+  border-radius: 50%;
+
+  transform: rotate(0deg);
+
+  transition:
+    transform 0.8s ease,
+    border-color 0.5s ease;
+}
+
+.service-card:hover .service-icon-ring {
+  transform: rotate(180deg);
+
+  border-color: rgba(34, 211, 238, 0.3);
+}
+
+
+/* =========================================================
+   CONTENT
+   ========================================================= */
+
+.service-card-content {
+  margin-top: 55px;
+
+  position: relative;
+
+  z-index: 2;
+}
+
+.service-small-label {
+  display: block;
+
+  margin-bottom: 14px;
+
+  font-size: 8px;
+
+  letter-spacing: 0.2em;
+
+  color: #697384;
+}
+
+.service-card-content h3 {
+  margin: 0 0 17px;
+
+  color: var(--white);
+
+  font-size: clamp(27px, 2.5vw, 36px);
+
+  line-height: 1.05;
+
+  letter-spacing: -0.04em;
+
+  transition:
+    color 0.35s ease,
+    transform 0.35s ease;
+}
+
+.service-card:hover .service-card-content h3 {
+  color: #ffffff;
+
+  transform: translateX(3px);
+}
+
+.service-card-content p {
+  max-width: 430px;
+
+  margin: 0;
+
+  color: var(--muted);
+
+  font-size: 14px;
+
+  line-height: 1.8;
+}
+
+
+/* =========================================================
+   TAGS
+   ========================================================= */
+
+.service-tags {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 7px;
+
+  margin-top: 25px;
+}
+
+.service-tags span {
+  padding: 7px 10px;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  background: rgba(255, 255, 255, 0.025);
+
+  color: #8993a5;
+
+  font-size: 8px;
+
+  letter-spacing: 0.1em;
+
+  transition:
+    color 0.3s ease,
+    border-color 0.3s ease,
+    background 0.3s ease;
+}
+
+.service-card:hover .service-tags span {
+  border-color: rgba(139, 92, 246, 0.2);
+
+  background: rgba(124, 58, 237, 0.05);
+
+  color: #aeb6c6;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.service-card-footer {
+  margin-top: auto;
+
+  padding-top: 28px;
+
+  position: relative;
+
+  z-index: 2;
+}
+
+.service-card-link {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 14px;
+
+  width: 100%;
+
+  text-decoration: none;
+
+  color: #dfe4ed;
+
+  font-size: 11px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.02em;
+
+  transition:
+    color 0.3s ease;
+}
+
+.service-card-link:hover {
+  color: var(--cyan);
+}
+
+.service-arrow {
+  width: 38px;
+  height: 38px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(255, 255, 255, 0.1);
+
+  border-radius: 50%;
+
+  color: var(--cyan);
+
+  transition:
+    transform 0.4s ease,
+    background 0.4s ease,
+    border-color 0.4s ease;
+}
+
+.service-card-link:hover .service-arrow {
+  transform: translate(3px, -3px);
+
+  border-color: rgba(34, 211, 238, 0.35);
+
+  background: rgba(34, 211, 238, 0.08);
+}
+
+
+/* =========================================================
+   FOOTER LINE
+   ========================================================= */
+
+.service-footer-line {
+  display: block;
+
+  width: 100%;
+
+  height: 1px;
+
+  margin-top: 18px;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(139, 92, 246, 0.4),
+      transparent
+    );
+
+  transform-origin: left;
+
+  transition:
+    transform 0.5s ease,
+    background 0.5s ease;
+}
+
+.service-card:hover .service-footer-line {
+  transform: scaleX(1.15);
+
+  background:
+    linear-gradient(
+      90deg,
+      var(--violet),
+      var(--cyan),
+      transparent
+    );
+}
+
+
+/* =========================================================
+   CORNER DECORATION
+   ========================================================= */
+
+.service-corner {
+  position: absolute;
+
+  width: 16px;
+  height: 16px;
+
+  opacity: 0.4;
+
+  transition:
+    opacity 0.35s ease,
+    transform 0.35s ease;
+}
+
+.service-corner-top {
+  top: 0;
+  left: 0;
+
+  border-top: 1px solid var(--violet);
+  border-left: 1px solid var(--violet);
+}
+
+.service-corner-bottom {
+  right: 0;
+  bottom: 0;
+
+  border-right: 1px solid var(--cyan);
+  border-bottom: 1px solid var(--cyan);
+}
+
+.service-card:hover .service-corner {
+  opacity: 1;
+}
+
+.service-card:hover .service-corner-top {
+  transform: translate(4px, 4px);
+}
+
+.service-card:hover .service-corner-bottom {
+  transform: translate(-4px, -4px);
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 991px) {
+
+  .service-card {
+    min-height: 410px;
+
+    padding: 30px;
+  }
+
+  .service-card-content {
+    margin-top: 45px;
+  }
+
+}
+
+
+@media (max-width: 767px) {
+
+  .service-card {
+    min-height: 390px;
+
+    padding: 26px;
+  }
+
+  .service-icon-wrap {
+    width: 58px;
+    height: 58px;
+  }
+
+  .service-icon {
+    width: 50px;
+    height: 50px;
+
+    font-size: 20px;
+  }
+
+  .service-card-content {
+    margin-top: 38px;
+  }
+
+  .service-card-content h3 {
+    font-size: 29px;
+  }
+
+  .service-card-content p {
+    font-size: 13px;
+  }
+
+}
+
+
+@media (max-width: 480px) {
+
+  .service-card {
+    min-height: 370px;
+
+    padding: 23px;
+  }
+
+  .service-card-content {
+    margin-top: 32px;
+  }
+
+  .service-card-content h3 {
+    font-size: 26px;
+  }
+
+  .service-tags {
+    margin-top: 20px;
+  }
+
+}
